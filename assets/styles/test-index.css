@@ -1,0 +1,12 @@
+.test-index {
+    background-color: coral;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    background: rgb(77, 167, 92);
+  }
