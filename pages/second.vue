@@ -1,62 +1,46 @@
 <template>
-  <div class="base-timer">
-    <svg
-      class="base-timer__svg"
-      viewBox="0 0 100 100"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g class="base-timer__circle">
-        <circle
-          class="base-timer__path-elapsed"
-          cx="50"
-          cy="50"
-          r="46.5"
-        />
-      </g>
-    </svg>
-    <span class="base-timer__label">
-      <!-- Remaining time label -->
-    </span>
-
-
-
-
-
-
-
-<svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" stroke="red" fill="grey">
-  <circle cx="50" cy="50" r="40" />
-  <circle cx="150" cy="50" r="4" />
-
-  <svg viewBox="0 0 10 10" x="200" width="100">
-    <circle cx="5" cy="5" r="4" />
-  </svg>
-</svg>
-
-
-
-
-  </div>
+    <div>
+        <input type="text" name="time" id="time">
+        <button id="button">Запустить</button>
+        <div id="timer"></div>
+    </div>
 </template>
 
 
-<style scoped lang="scss">
-/* Sets the containers height and width */
-.base-timer {
-  position: relative;
-  width: 300px;
-  height: 300px;
-/* Removes SVG styling that would hide the time label */
-  &__circle {
-    fill: none;
-    stroke: none;
-  }
-/* The SVG path that displays the timer's progress */
-  &__path-elapsed {
-    stroke-width: 7px;
-    stroke:grey;
-  }
+<script>
+    let timerInput = document.getElementById("time"); // Берём строку
+    let buttonRun = document.getElementById("button");// Берём кнопку запуска
+    let timerShow = document.getElementById("timer");
+
+    buttonRun.addEventListener('click', function() {
+    timeMinut = parseInt(timerInput.value) * 60
+    })
+
+    timer = setInterval(function () {
+    seconds = timeMinut%60 // Получаем секунды
+    minutes = timeMinut/60%60 // Получаем минуты
+    hour = timeMinut/60/60%60 // Получаем часы
+    // Условие если время закончилось то...
+    if (timeMinut <= 0) {
+        // Таймер удаляется
+        clearInterval(timer);
+        // Выводит сообщение что время закончилось
+        alert("Время закончилось");
+    } else { // Иначе
+        // Создаём строку с выводом времени
+        let strTimer = `${Math.trunc(hour)}:${Math.trunc(minuts)}:${seconds}`;
+        // Выводим строку в блок для показа таймера
+        timerShow.innerHTML = strTimer;
+    }
+    --timeMinut; // Уменьшаем таймер
+}, 1000)
+export default {
+
 }
+</script>
+
+
+<style scoped lang="scss">
 </style>
 
 

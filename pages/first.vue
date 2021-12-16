@@ -1,93 +1,84 @@
 <template>
-  <div 
-    class="first"
-  >
-    <div 
-      class="timer"
-  
-    >
-    </div>
+  <div class="first">
+    <div class="timer"></div>
 
-<div id="app">
-    <BaseTimer
-      :time-left="timeLeft"
-    />
-  </div>
+    <BaseTimer :time-left="timeLeft" />
 
- <div class="base-timer">
-    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <g class="base-timer__circle">
-        <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-        <path
-          :stroke-dasharray="circleDasharray"
-          class="base-timer__path-remaining"
-          :class="remainingPathColor"
-          d="
+    <div class="base-timer">
+      <svg
+        class="base-timer__svg"
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g class="base-timer__circle">
+          <circle
+            class="base-timer__path-elapsed"
+            cx="50"
+            cy="50"
+            r="45"
+          ></circle>
+          <path
+            :stroke-dasharray="circleDasharray"
+            class="base-timer__path-remaining"
+            :class="remainingPathColor"
+            d="
             M 50, 50
             m -45, 0
             a 45,45 0 1,0 90,0
             a 45,45 0 1,0 -90,0
           "
-        ></path>
-      </g>
-    </svg>
-    <span class="base-timer__label">{{ formattedTimeLeft }}</span>
-  </div>
-
-    <div 
-      class="start-or-stop"
-      @click="isStarted = !isStarted"
-    >
-     {{ isStarted ? 'S T O P' : 'S T A R T' }}
+          ></path>
+        </g>
+      </svg>
+      <span class="base-timer__label">{{ formattedTimeLeft }}</span>
     </div>
 
-  <div
-    class="AAAAAcircle"
-  >
-  </div>
+    <div
+      class="start-or-stop"
+      @click="start"
+    >
+      <template v-if="isStarted">S T O P</template>
+      <template v-else>S T A R T</template>
+    </div>
 
-  <div 
-    class="gear"
-  >
-      <img src="./../assets/images/gear.svg">
-  </div>
-    
+    <div class="gear">
+      <img src="./../assets/images/gear.svg" />
+    </div>
   </div>
 </template>
 
 <script>
+const FULL_DASH_ARRAY = 283;
+const WARNING_THRESHOLD = 10;
+const ALERT_THRESHOLD = 5;
 
-  const FULL_DASH_ARRAY = 283;
-  const WARNING_THRESHOLD = 10;
-  const ALERT_THRESHOLD = 5;
+const COLOR_CODES = {
+  info: {
+    color: "green",
+  },
+  warning: {
+    color: "orange",
+    threshold: WARNING_THRESHOLD,
+  },
+  alert: {
+    color: "red",
+    threshold: ALERT_THRESHOLD,
+  },
+};
 
-  const COLOR_CODES = {
-    info: {
-      color: "green"
-    },
-    warning: {
-      color: "orange",
-      threshold: WARNING_THRESHOLD
-    },
-    alert: {
-      color: "red",
-      threshold: ALERT_THRESHOLD
-    }
-  };
+const TIME_LIMIT = 20;
 
-  const TIME_LIMIT = 900;
-
-  export default {
-    colorMode: 'first',
-    data: function () {
-      return {
-        isStarted: false,
-        timeLimit: 900,
-        timePassed: 0,
-        timerInterval: null,
-      }
-    },
-    computed: {
+export default {
+  colorMode: "first",
+  data: function () {
+    return {
+      isStarted: false,
+      timeLimit: 900,
+      timePassed: 0,
+      timerInterval: null,
+    };
+  },
+  computed: {
     circleDasharray() {
       return `${(this.timeFraction * FULL_DASH_ARRAY).toFixed(0)} 283`;
     },
@@ -123,86 +114,28 @@
       } else {
         return info.color;
       }
-    }
+    },
   },
-    watch: {
+  watch: {
     timeLeft(newValue) {
       if (newValue === 0) {
         this.onTimesUp();
       }
-    }
-  },
-  mounted() {
-    this.startTimer()
-  },
-    methods: {
-      refresh: function() {
-        this.isStarted = !this.isStarted
-        this.$nuxt.refresh()
-      },
-      onTimesUp() {
-        clearInterval(this.timerInterval);
-      },
-
-      startTimer() {
-        this.timerInterval = setInterval(() => (this.timePassed += 1), 1000);
-      }
     },
-  }
+  },
+  methods: {
+    start: function () {
+      this.isStarted = !this.isStarted
+      this.timerInterval = setInterval(() => (this.timePassed += 1), 1000)
+      
+    },
+    onTimesUp() {
+      clearInterval(this.timerInterval)
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
-  @import './../assets/styles/first.css';
-  .base-timer {
-  position: relative;
-  width: 600px;
-  height: 600px;
-
-  &__svg {
-    transform: scaleX(-1);
-  }
-
-  &__circle {
-    fill: none;
-    stroke: none;
-  }
-
-  &__path-elapsed {
-    stroke-width: 3px;
-    stroke: grey;
-  }
-
-  &__path-remaining {
-    stroke-width: 3px;
-    stroke-linecap: round;
-    transform: rotate(270deg);
-    transform-origin: center;
-    transition: 1s linear all;
-    fill-rule: nonzero;
-    stroke: currentColor;
-
-    &.green {
-      color: rgb(65, 184, 131);
-    }
-
-    &.orange {
-      color: orange;
-    }
-
-    &.red {
-      color: red;
-    }
-  }
-
-  &__label {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 80px;
-  }
-}
+@import "./../assets/styles/first.scss";
 </style>
