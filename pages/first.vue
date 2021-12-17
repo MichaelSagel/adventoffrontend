@@ -126,8 +126,16 @@ export default {
   methods: {
     start: function () {
       this.isStarted = !this.isStarted
-      this.timerInterval = setInterval(() => (this.timePassed += 1), 1000)
-      
+      if(this.isStarted === true){
+        this.timerInterval = setInterval(
+          () => (
+            this.timePassed += 1
+          ),
+          1000
+        )
+      }else if(this.isStarted === false){
+        clearInterval(this.timerInterval)
+      }
     },
     onTimesUp() {
       clearInterval(this.timerInterval)
