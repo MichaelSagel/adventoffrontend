@@ -37,5 +37,5 @@ export default {
 </script>
 
 <style>
-@import "./../assets/styles/test-index.css";
+@import "./../assets/styles/index.scss";
 </style>

@@ -1,0 +1,87 @@
+.second{
+    min-height: 97vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu{
+    overflow: auto;
+    margin-right: 50px;
+    border-radius: 25px 0 0;
+    width: 375px;
+    height: 875px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+.menu-item{
+    color: black;
+    display: flex;
+    flex-direction: row;
+    margin: 30px 0 30px 45px;
+    border-radius: 0 0 0 20px;
+}
+.to-go-menu{
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 80px;
+    font-size: 32px;
+}
+.menu-item-info{
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+.price{
+    font-weight: bold;
+    font-size: 32px;
+}
+.menu-title{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-end;
+}
+.btn-bay{
+    cursor: pointer;
+    font-weight: 700;
+    background-color: #6B00F5;
+    color: #FFFFFF;
+    font-size: 16px;
+    border-radius: 15px;
+    padding: 3px 20px 3px 20px;
+    display: flex;
+    position: relative;
+    top: 28px;
+}
+.img-check{
+    margin-right: 14px;
+}
+.menu-img{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    bottom: 40px;
+    right: 40px;
+}
+.pattens-blue{
+    background-color: #e1f1fe;
+}
+.pale-rose{
+    background-color: #ffe2f0;
+}
+.ghost-white{
+    background-color: #f7f7fe;
+}
+.white-ice{
+    background-color: #defef0;
+}
+.card{
+    border-radius: 25px 0 0 25px;
+    width: 375px;
+    height: 875px;
+    background-color: #FFFFFF;
+}

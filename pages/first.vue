@@ -1,7 +1,6 @@
 <template>
   <div class="first">
-    <div class="timer"></div>
-
+    
     <BaseTimer :time-left="timeLeft" />
 
     <div class="base-timer">
@@ -39,10 +38,6 @@
     >
       <template v-if="isStarted">S T O P</template>
       <template v-else>S T A R T</template>
-    </div>
-
-    <div class="gear">
-      <img src="./../assets/images/gear.svg" />
     </div>
   </div>
 </template>
