@@ -313,68 +313,68 @@
                         </div>
                         <div class="card-line-tamplate"></div>
                     </template>
-                    <template v-if="!isAddFrenchFries">
+                    <template v-if="!isAddSalmonAndVegetables">
                         <div class="card-item-tamplate">
-                            <img class="card-img" src="./../assets/images/second/plate__french-fries.png"/>
+                            <img class="card-img" src="./../assets/images/second/plate__salmon-vegetables.png"/>
                             <div class="numberOfOrders">
-                                {{numberOfFrenchFries}}
+                                {{numberSalmonAndVegetables}}
                             </div>
                             <div class="card-info">
                                 <div>
-                                    Fish Sticks and Fries
+                                    Salmon and Vegetables
                                 </div>
-                                <div class="card-info-price">${{priceFrenchFries}}</div>
+                                <div class="card-info-price">${{priceSalmonAndVegetables}}</div>
                             
                                 <div class="amount-of-orders">
                                     <div 
-                                        @click="removeFrenchFriesNumber"
+                                        @click="removeSalmonAndVegetablesNumber"
                                         class="minus-img"
                                     > 
                                         <img src="./../assets/images/second/chevron.svg"/>
                                     </div>
-                                        {{numberOfFrenchFries}}
+                                        {{numberSalmonAndVegetables}}
                                     <div 
-                                        @click="addFrenchFriesNumber"
+                                        @click="addSalmonAndVegetablesNumber"
                                         class="plus-img"
                                     >
                                         <img src="./../assets/images/second/chevron.svg"/>
                                     </div>
                                     <div class="amount-of-orders-price">
-                                        ${{totalPriceFrenchFries}}
+                                        ${{totalSalmonAndVegetables}}
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-line-tamplate"></div>
                     </template>
-                    <template v-if="!isAddFrenchFries">
+                    <template v-if="!isAddSpaghettiWithMeatSauce">
                         <div class="card-item-tamplate">
                             <img class="card-img" src="./../assets/images/second/plate__french-fries.png"/>
                             <div class="numberOfOrders">
-                                {{numberOfFrenchFries}}
+                                {{numberOfSpaghettiWithMeatSauce}}
                             </div>
                             <div class="card-info">
                                 <div>
-                                    Fish Sticks and Fries
+                                    Spaghetti with Meat Sauce
                                 </div>
-                                <div class="card-info-price">${{priceFrenchFries}}</div>
+                                <div class="card-info-price">${{priceSpaghettiWithMeatSauce}}</div>
                             
                                 <div class="amount-of-orders">
                                     <div 
-                                        @click="removeFrenchFriesNumber"
+                                        @click="removeSpaghettiWithMeatSauce"
                                         class="minus-img"
                                     > 
                                         <img src="./../assets/images/second/chevron.svg"/>
                                     </div>
-                                        {{numberOfFrenchFries}}
+                                        {{numberOfSpaghettiWithMeatSauce}}
                                     <div 
-                                        @click="addFrenchFriesNumber"
+                                        @click="addSpaghettiWithMeatSauce"
                                         class="plus-img"
                                     >
                                         <img src="./../assets/images/second/chevron.svg"/>
                                     </div>
                                     <div class="amount-of-orders-price">
-                                        ${{totalPriceFrenchFries}}
+                                        ${{totalSpaghettiWithMeatSauce}}
                                     </div>
                                 </div>
                             </div>
@@ -552,10 +552,8 @@
                         <div class="card-line-tamplate"></div>
                     </template>
                 </div>
-
                 <div class="card-line"></div>
             </div>
-                
             <div class="sum">
                 <div class="sum-layout">
                     Subtotal:
@@ -589,6 +587,10 @@ export default {
     return {
         totalPriceFrenchFries: 2.23,
         numberOfFrenchFries: 1,
+        totalSalmonAndVegetables: 5.12,
+        numberSalmonAndVegetables: 1,
+        totalSpaghettiWithMeatSauce: 7.82,
+        numberOfSpaghettiWithMeatSauce: 1,
         subtotal: 0,
         priceFrenchFries: 2.23,
         priceSalmonAndVegetables: 5.12,
@@ -705,6 +707,130 @@ export default {
             var element = document.getElementById("btnBaconEggsAndToast");
             element.style.backgroundColor = "black";
             this.subtotal = this.subtotal + this.priceBaconEggsAndToast;
+        }
+    },
+    addFrenchFriesNumber: function() {
+        this.numberOfFrenchFries = this.numberOfFrenchFries + 1
+        this.totalPriceFrenchFries = this.totalPriceFrenchFries + this.priceFrenchFries
+            this.subtotal = this.subtotal + this.priceFrenchFries;
+    },
+    removeFrenchFriesNumber: function() {
+        if (this.numberOfFrenchFries > 1) {
+            this.numberOfFrenchFries = this.numberOfFrenchFries - 1;
+        this.totalPriceFrenchFries = this.totalPriceFrenchFries - this.priceFrenchFries
+            this.subtotal = this.subtotal - this.priceFrenchFries;
+        }else if (this.numberOfFrenchFries === 1){
+            this.isAddFrenchFries = true
+            var element = document.getElementById("btnFrenchFries");
+            element.style.backgroundColor = "#6B00F5";
+            this.subtotal = this.subtotal - this.priceFrenchFries;
+            
+        }
+    },
+    addFrenchFriesNumber: function() {
+        this.numberOfFrenchFries = this.numberOfFrenchFries + 1
+        this.totalPriceFrenchFries = this.totalPriceFrenchFries + this.priceFrenchFries
+            this.subtotal = this.subtotal + this.priceFrenchFries;
+    },
+    removeSalmonAndVegetablesNumber: function() {
+        if (this.numberOfSpaghettiWithMeatSauce > 1) {
+            this.numberOfSpaghettiWithMeatSauce = this.numberOfSpaghettiWithMeatSauce - 1;
+        this.totalSalmonAndVegetables = this.totalSalmonAndVegetables - this.priceSalmonAndVegetables
+            this.subtotal = this.subtotal - this.priceSalmonAndVegetables;
+        }else if (this.numberOfSpaghettiWithMeatSauce === 1){
+            this.isAddSalmonAndVegetables = true
+            var element = document.getElementById("btnFrenchFries");
+            element.style.backgroundColor = "#6B00F5";
+            this.subtotal = this.subtotal - this.priceSalmonAndVegetables;
+        }
+    },
+    addSalmonAndVegetablesNumber: function() {
+        this.numberSalmonAndVegetables = this.numberSalmonAndVegetables + 1
+        this.totalSalmonAndVegetables = this.totalSalmonAndVegetables + this.priceSalmonAndVegetables
+            this.subtotal = this.subtotal + this.priceSalmonAndVegetables;
+    },
+    removeSpaghettiWithMeatSauce: function() {
+        if (this.numberOfSpaghettiWithMeatSauce > 1) {
+            this.numberOfSpaghettiWithMeatSauce = this.numberOfSpaghettiWithMeatSauce - 1;
+        this.totalSpaghettiWithMeatSauce = this.totalSpaghettiWithMeatSauce - this.priceSpaghettiWithMeatSauce
+            this.subtotal = this.subtotal - this.priceSpaghettiWithMeatSauce;
+        }else if (this.numberOfFrenchFries === 1){
+            this.isAddFrenchFries = true
+            var element = document.getElementById("btnFrenchFries");
+            element.style.backgroundColor = "#6B00F5";
+            this.subtotal = this.subtotal - this.priceSpaghettiWithMeatSauce;
+        }
+    },
+    addSpaghettiWithMeatSauce: function() {
+        this.numberOfSpaghettiWithMeatSauce = this.numberOfSpaghettiWithMeatSauce + 1
+        this.totalPriceSpaghettiWithMeatSauce= this.totalPriceSpaghettiWithMeatSauce + this.priceSpaghettiWithMeatSauce
+            this.subtotal = this.subtotal + this.priceSpaghettiWithMeatSauce;
+    },
+    removeFrenchFriesNumber: function() {
+        if (this.numberOfFrenchFries > 1) {
+            this.numberOfFrenchFries = this.numberOfFrenchFries - 1;
+        this.totalPriceFrenchFries = this.totalPriceFrenchFries - this.priceFrenchFries
+            this.subtotal = this.subtotal - this.priceFrenchFries;
+        }else if (this.numberOfFrenchFries === 1){
+            this.isAddFrenchFries = true
+            var element = document.getElementById("btnFrenchFries");
+            element.style.backgroundColor = "#6B00F5";
+            this.subtotal = this.subtotal - this.priceFrenchFries;
+            
+        }
+    },
+    addFrenchFriesNumber: function() {
+        this.numberOfFrenchFries = this.numberOfFrenchFries + 1
+        this.totalPriceFrenchFries = this.totalPriceFrenchFries + this.priceFrenchFries
+            this.subtotal = this.subtotal + this.priceFrenchFries;
+    },
+    removeFrenchFriesNumber: function() {
+        if (this.numberOfFrenchFries > 1) {
+            this.numberOfFrenchFries = this.numberOfFrenchFries - 1;
+        this.totalPriceFrenchFries = this.totalPriceFrenchFries - this.priceFrenchFries
+            this.subtotal = this.subtotal - this.priceFrenchFries;
+        }else if (this.numberOfFrenchFries === 1){
+            this.isAddFrenchFries = true
+            var element = document.getElementById("btnFrenchFries");
+            element.style.backgroundColor = "#6B00F5";
+            this.subtotal = this.subtotal - this.priceFrenchFries;
+            
+        }
+    },
+    addFrenchFriesNumber: function() {
+        this.numberOfFrenchFries = this.numberOfFrenchFries + 1
+        this.totalPriceFrenchFries = this.totalPriceFrenchFries + this.priceFrenchFries
+            this.subtotal = this.subtotal + this.priceFrenchFries;
+    },
+    removeFrenchFriesNumber: function() {
+        if (this.numberOfFrenchFries > 1) {
+            this.numberOfFrenchFries = this.numberOfFrenchFries - 1;
+        this.totalPriceFrenchFries = this.totalPriceFrenchFries - this.priceFrenchFries
+            this.subtotal = this.subtotal - this.priceFrenchFries;
+        }else if (this.numberOfFrenchFries === 1){
+            this.isAddFrenchFries = true
+            var element = document.getElementById("btnFrenchFries");
+            element.style.backgroundColor = "#6B00F5";
+            this.subtotal = this.subtotal - this.priceFrenchFries;
+            
+        }
+    },
+    addFrenchFriesNumber: function() {
+        this.numberOfFrenchFries = this.numberOfFrenchFries + 1
+        this.totalPriceFrenchFries = this.totalPriceFrenchFries + this.priceFrenchFries
+            this.subtotal = this.subtotal + this.priceFrenchFries;
+    },
+    removeFrenchFriesNumber: function() {
+        if (this.numberOfFrenchFries > 1) {
+            this.numberOfFrenchFries = this.numberOfFrenchFries - 1;
+        this.totalPriceFrenchFries = this.totalPriceFrenchFries - this.priceFrenchFries
+            this.subtotal = this.subtotal - this.priceFrenchFries;
+        }else if (this.numberOfFrenchFries === 1){
+            this.isAddFrenchFries = true
+            var element = document.getElementById("btnFrenchFries");
+            element.style.backgroundColor = "#6B00F5";
+            this.subtotal = this.subtotal - this.priceFrenchFries;
+            
         }
     },
     addFrenchFriesNumber: function() {
