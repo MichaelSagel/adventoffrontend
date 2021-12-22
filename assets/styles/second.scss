@@ -5,6 +5,7 @@
     justify-content: center;
 }
 .menu{
+    width: 100%;
     overflow: auto;
     margin-right: 50px;
     border-radius: 25px 0 0;
@@ -16,6 +17,7 @@
     font-family: sans-serif;
 }
 .menu-item{
+    width: 100%;
     color: black;
     display: flex;
     flex-direction: row;
@@ -90,12 +92,12 @@
 .your-card{
     font-weight: 1000;
     font-family: "Poppins", sans-serif;
-    margin-bottom: 80px;
+    margin: 80px 0 80px 25px;
     font-size: 32px;
     color: black;
-    margin-top: 80px;
 }
 .card-content{
+    margin: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -107,6 +109,18 @@
     color: #D7D7F9;
     height: 6px;
     width: 85%;
+    margin-top: 60px;
+}
+.card-line-tamplate{
+    border: none;
+    background-color: #D7D7F9;
+    color: #D7D7F9;
+    height: 2px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 45px;
 }
 .sum{
     font-family: "Poppins", sans-serif;
@@ -127,36 +141,73 @@
     margin-left: 20px;
 }
 .card-item{
+    width: 100%;
     display: flex;
+    flex-direction: column;
+}
+.card-item-tamplate{
+    display: flex;
+    margin-bottom: 40px;
 }
 .numberOfOrders{
     font-family: "Poppins", sans-serif;
     background-color: black;
     color: white;
     font-weight: 700;
-    width: 20px;
-    height: 20px;
-    padding: 6px;
+    width: 40px;
+    height: 30px;
     border-radius: 50%;
     display: flex;
-
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 50px;
+    top: 20px;
 }
 .card-img{
     width: 70px;
     height: 70px;
 }
+.card-info{
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.amount-of-orders{
+    font-weight: 700;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 15px;
+}
 .minus-img{
     background-color: #6B00F5;
-    width: 20px;
-    height: 20px;
-    padding: 6px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .plus-img{
     background-color: #6B00F5;
     transform: rotate(180deg);
-    width: 20px;
-    height: 20px;
-    padding: 6px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-info-price{
+    font-weight: 700;
+    margin-top: 5px;
+}
+.amount-of-orders-price{
+    font-size: 32px;
 }
