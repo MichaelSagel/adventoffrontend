@@ -415,6 +415,142 @@
                         </div>
                         <div class="card-line-tamplate"></div>
                     </template>
+                    <template v-if="!isAddFrenchFries">
+                        <div class="card-item-tamplate">
+                            <img class="card-img" src="./../assets/images/second/plate__french-fries.png"/>
+                            <div class="numberOfOrders">
+                                {{numberOfFrenchFries}}
+                            </div>
+                            <div class="card-info">
+                                <div>
+                                    Fish Sticks and Fries
+                                </div>
+                                <div class="card-info-price">${{priceFrenchFries}}</div>
+                            
+                                <div class="amount-of-orders">
+                                    <div 
+                                        @click="removeFrenchFriesNumber"
+                                        class="minus-img"
+                                    > 
+                                        <img src="./../assets/images/second/chevron.svg"/>
+                                    </div>
+                                        {{numberOfFrenchFries}}
+                                    <div 
+                                        @click="addFrenchFriesNumber"
+                                        class="plus-img"
+                                    >
+                                        <img src="./../assets/images/second/chevron.svg"/>
+                                    </div>
+                                    <div class="amount-of-orders-price">
+                                        ${{totalPriceFrenchFries}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-line-tamplate"></div>
+                    </template>
+                    <template v-if="!isAddFrenchFries">
+                        <div class="card-item-tamplate">
+                            <img class="card-img" src="./../assets/images/second/plate__french-fries.png"/>
+                            <div class="numberOfOrders">
+                                {{numberOfFrenchFries}}
+                            </div>
+                            <div class="card-info">
+                                <div>
+                                    Fish Sticks and Fries
+                                </div>
+                                <div class="card-info-price">${{priceFrenchFries}}</div>
+                            
+                                <div class="amount-of-orders">
+                                    <div 
+                                        @click="removeFrenchFriesNumber"
+                                        class="minus-img"
+                                    > 
+                                        <img src="./../assets/images/second/chevron.svg"/>
+                                    </div>
+                                        {{numberOfFrenchFries}}
+                                    <div 
+                                        @click="addFrenchFriesNumber"
+                                        class="plus-img"
+                                    >
+                                        <img src="./../assets/images/second/chevron.svg"/>
+                                    </div>
+                                    <div class="amount-of-orders-price">
+                                        ${{totalPriceFrenchFries}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-line-tamplate"></div>
+                    </template>
+                    <template v-if="!isAddFrenchFries">
+                        <div class="card-item-tamplate">
+                            <img class="card-img" src="./../assets/images/second/plate__french-fries.png"/>
+                            <div class="numberOfOrders">
+                                {{numberOfFrenchFries}}
+                            </div>
+                            <div class="card-info">
+                                <div>
+                                    Fish Sticks and Fries
+                                </div>
+                                <div class="card-info-price">${{priceFrenchFries}}</div>
+                            
+                                <div class="amount-of-orders">
+                                    <div 
+                                        @click="removeFrenchFriesNumber"
+                                        class="minus-img"
+                                    > 
+                                        <img src="./../assets/images/second/chevron.svg"/>
+                                    </div>
+                                        {{numberOfFrenchFries}}
+                                    <div 
+                                        @click="addFrenchFriesNumber"
+                                        class="plus-img"
+                                    >
+                                        <img src="./../assets/images/second/chevron.svg"/>
+                                    </div>
+                                    <div class="amount-of-orders-price">
+                                        ${{totalPriceFrenchFries}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-line-tamplate"></div>
+                    </template>
+                    <template v-if="!isAddFrenchFries">
+                        <div class="card-item-tamplate">
+                            <img class="card-img" src="./../assets/images/second/plate__french-fries.png"/>
+                            <div class="numberOfOrders">
+                                {{numberOfFrenchFries}}
+                            </div>
+                            <div class="card-info">
+                                <div>
+                                    Fish Sticks and Fries
+                                </div>
+                                <div class="card-info-price">${{priceFrenchFries}}</div>
+                            
+                                <div class="amount-of-orders">
+                                    <div 
+                                        @click="removeFrenchFriesNumber"
+                                        class="minus-img"
+                                    > 
+                                        <img src="./../assets/images/second/chevron.svg"/>
+                                    </div>
+                                        {{numberOfFrenchFries}}
+                                    <div 
+                                        @click="addFrenchFriesNumber"
+                                        class="plus-img"
+                                    >
+                                        <img src="./../assets/images/second/chevron.svg"/>
+                                    </div>
+                                    <div class="amount-of-orders-price">
+                                        ${{totalPriceFrenchFries}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-line-tamplate"></div>
+                    </template>
                 </div>
 
                 <div class="card-line"></div>
