@@ -468,7 +468,7 @@ export default {
 
         priceChickenSaladwithParmesean: 6.98,
         isAddChickenSaladwithParmesean: true,
-        totalChickenSaladwithParmesean: 2.23,
+        totalChickenSaladwithParmesean: 6.98,
         numberOfChickenSaladwithParmesean: 1,
 
         priceFishSticksAndFries:6.34,
