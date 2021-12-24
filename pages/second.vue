@@ -18,7 +18,7 @@
                         <div 
                             class="price"
                         >
-                            ${{FrenchFries.price}}
+                            ${{priceFrenchFries}}
                         </div>
                         <div
                             class="btn-bay"
@@ -50,7 +50,7 @@
                         <div 
                             class="price"
                         >
-                            ${{SalmonAndVegetables.price}}
+                            ${{priceSalmonAndVegetables}}
                         </div>
                         <div
                             class="btn-bay"
@@ -83,7 +83,7 @@
                         <div 
                             class="price"
                         >
-                            ${{SpaghettiWithMeatSauce.price}}
+                            ${{priceSpaghettiWithMeatSauce}}
                         </div>
                         <div
                             class="btn-bay"
@@ -116,7 +116,7 @@
                         <div 
                             class="price"
                         >
-                            ${{ChickenSaladwithParmesean.price}}
+                            ${{priceChickenSaladwithParmesean}}
                         </div>
                         <div
                             class="btn-bay"
@@ -149,7 +149,7 @@
                         <div 
                             class="price"
                         >
-                            ${{FishSticksAndFries.price}}
+                            ${{priceFishSticksAndFries}}
                         </div>
                         <div
                             class="btn-bay"
@@ -182,7 +182,7 @@
                         <div 
                             class="price"
                         >
-                            ${{Ravioli.price}}
+                            ${{priceRavioli}}
                         </div>
                         <div
                             class="btn-bay"
@@ -215,7 +215,7 @@
                         <div 
                             class="price"
                         >
-                            ${{Tortellini.price}}
+                            ${{priceTortellini}}
                         </div>
                         <div
                             class="btn-bay"
@@ -248,7 +248,7 @@
                         <div 
                             class="price"
                         >
-                            ${{BaconEggsAndToast.price}}
+                            ${{priceBaconEggsAndToast}}
                         </div>
                         <div
                             class="btn-bay"
@@ -289,7 +289,7 @@
                                 <div>
                                     Fish Sticks and Fries
                                 </div>
-                                <div class="card-info-price">${{FrenchFries.price}}</div>
+                                <div class="card-info-price">${{priceFrenchFries}}</div>
                             
                                 <div class="amount-of-orders">
                                     <div 
@@ -323,7 +323,7 @@
                                 <div>
                                     Salmon and Vegetables
                                 </div>
-                                <div class="card-info-price">${{SalmonAndVegetables.price}}</div>
+                                <div class="card-info-price">${{priceSalmonAndVegetables}}</div>
                             
                                 <div class="amount-of-orders">
                                     <div 
@@ -351,30 +351,30 @@
                         <div class="card-item-tamplate">
                             <img class="card-img" src="./../assets/images/second/plate__spaghetti-meat-sauce.png"/>
                             <div class="numberOfOrders">
-                                {{numberSalmonAndVegetables}}
+                                {{numberOfSpaghettiWithMeatSauce}}
                             </div>
                             <div class="card-info">
                                 <div>
-                                    Salmon and Vegetables
+                                    Spaghetti with Meat Sauce
                                 </div>
-                                <div class="card-info-price">${{SalmonAndVegetables.price}}</div>
+                                <div class="card-info-price">${{priceSpaghettiWithMeatSauce}}</div>
                             
                                 <div class="amount-of-orders">
                                     <div 
-                                        @click="removeSalmonAndVegetables"
+                                        @click="removeSpaghettiWithMeatSauce"
                                         class="minus-img"
                                     > 
                                         <img src="./../assets/images/second/chevron.svg"/>
                                     </div>
-                                        {{numberSalmonAndVegetables}}
+                                        {{numberOfSpaghettiWithMeatSauce}}
                                     <div 
-                                        @click="toRaiseSalmonAndVegetables"
+                                        @click="toRaiseSpaghettiWithMeatSauce"
                                         class="plus-img"
                                     >
                                         <img src="./../assets/images/second/chevron.svg"/>
                                     </div>
                                     <div class="amount-of-orders-price">
-                                        ${{totalSalmonAndVegetables}}
+                                        ${{totalSpaghettiWithMeatSauce}}
                                     </div>
                                 </div>
                             </div>
@@ -391,7 +391,7 @@
                                 <div>
                                     Chicken Salad with Parmesean
                                 </div>
-                                <div class="card-info-price">${{ChickenSaladwithParmesean.price}}</div>
+                                <div class="card-info-price">${{priceChickenSaladwithParmesean}}</div>
                             
                                 <div class="amount-of-orders">
                                     <div 
@@ -409,6 +409,108 @@
                                     </div>
                                     <div class="amount-of-orders-price">
                                         ${{totalChickenSaladwithParmesean}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-line-tamplate"></div>
+                    </template>
+                    <template v-if="!isAddFishSticksAndFries">
+                        <div class="card-item-tamplate">
+                            <img class="card-img" src="./../assets/images/second/plate__fish-sticks-fries.png"/>
+                            <div class="numberOfOrders">
+                                {{numberOfFishSticksAndFries}}
+                            </div>
+                            <div class="card-info">
+                                <div>
+                                    Chicken Salad with Parmesean
+                                </div>
+                                <div class="card-info-price">${{priceFishSticksAndFries}}</div>
+                            
+                                <div class="amount-of-orders">
+                                    <div 
+                                        @click="removeFishSticksAndFries"
+                                        class="minus-img"
+                                    > 
+                                        <img src="./../assets/images/second/chevron.svg"/>
+                                    </div>
+                                        {{numberOfFishSticksAndFries}}
+                                    <div 
+                                        @click="toRaiseFishSticksAndFries"
+                                        class="plus-img"
+                                    >
+                                        <img src="./../assets/images/second/chevron.svg"/>
+                                    </div>
+                                    <div class="amount-of-orders-price">
+                                        ${{totalFishSticksAndFries}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-line-tamplate"></div>
+                    </template>
+                    <template v-if="!isAddRavioli">
+                        <div class="card-item-tamplate">
+                            <img class="card-img" src="./../assets/images/second/plate__ravioli.png"/>
+                            <div class="numberOfOrders">
+                                {{numberOfRavioli}}
+                            </div>
+                            <div class="card-info">
+                                <div>
+                                    Ravioli
+                                </div>
+                                <div class="card-info-price">${{priceRavioli}}</div>
+                            
+                                <div class="amount-of-orders">
+                                    <div 
+                                        @click="removeRavioli"
+                                        class="minus-img"
+                                    > 
+                                        <img src="./../assets/images/second/chevron.svg"/>
+                                    </div>
+                                        {{numberOfRavioli}}
+                                    <div 
+                                        @click="toRaiseRavioli"
+                                        class="plus-img"
+                                    >
+                                        <img src="./../assets/images/second/chevron.svg"/>
+                                    </div>
+                                    <div class="amount-of-orders-price">
+                                        ${{totalRavioli}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-line-tamplate"></div>
+                    </template>
+                    <template v-if="!isAddTortellini">
+                        <div class="card-item-tamplate">
+                            <img class="card-img" src="./../assets/images/second/plate.png"/>
+                            <div class="numberOfOrders">
+                                {{numberOfTortellini}}
+                            </div>
+                            <div class="card-info">
+                                <div>
+                                    Tortellini
+                                </div>
+                                <div class="card-info-price">${{priceTortellini}}</div>
+                            
+                                <div class="amount-of-orders">
+                                    <div 
+                                        @click="removeTortellini"
+                                        class="minus-img"
+                                    > 
+                                        <img src="./../assets/images/second/chevron.svg"/>
+                                    </div>
+                                        {{numberOfTortellini}}
+                                    <div 
+                                        @click="toRaiseTortellini"
+                                        class="plus-img"
+                                    >
+                                        <img src="./../assets/images/second/chevron.svg"/>
+                                    </div>
+                                    <div class="amount-of-orders-price">
+                                        ${{totalTortellini}}
                                     </div>
                                 </div>
                             </div>
@@ -449,91 +551,44 @@ export default {
     colorMode: "second",
     data: function () {
     return {
-
-        FrenchFries:[
-            {price: 2.23},
-            {isAdd: true},
-            {total: 2.23},
-            {number: 1}
-        ],
-        SalmonAndVegetables: [
-            {price: 5.12},
-            {isAdd: true},
-            {total: 5.12},
-            {number: 1}
-        ],
-        SpaghettiWithMeatSauce: [
-            {price: 7.82},
-            {isAdd: true},
-            {total: 7.82},
-            {number: 1}
-        ],
-        ChickenSaladwithParmesean:[
-            {price: 6.98},
-            {isAdd: true},
-            {total: 6.98},
-            {number: 1}
-        ],
-        FishSticksAndFries:[
-            {price: 6.34},
-            {isAdd: true},
-            {total: 6.34},
-            {number: 1}
-        ],
-        Ravioli:[
-            {price: 6.45},
-            {isAdd: true},
-            {total: 6.45},
-            {number: 1}
-        ],
-        Tortellini:[
-            {price: 6.05},
-            {isAdd: true},
-            {total: 6.05},
-            {number: 1}
-        ],
-        BaconEggsAndToast:[
-            {price: 5.99},
-            {isAdd: true},
-            {total: 5.99},
-            {number: 1}
-        ],
-
+        
+        priceFrenchFries: 2.23,
         isAddFrenchFries: true,
         totalFrenchFries: 2.23,
         numberOfFrenchFries: 1,
 
-        : 5.12,
+        priceSalmonAndVegetables: 5.12,
         isAddSalmonAndVegetables: true,
         totalSalmonAndVegetables: 5.12,
         numberSalmonAndVegetables: 1,
 
         
-        price: 7.82,
+        priceSpaghettiWithMeatSauce: 7.82,
         isAddSpaghettiWithMeatSauce: true,
         totalSpaghettiWithMeatSauce: 7.82,
         numberOfSpaghettiWithMeatSauce: 1,
 
+        priceChickenSaladwithParmesean: 6.98,
         isAddChickenSaladwithParmesean: true,
         totalChickenSaladwithParmesean: 6.98,
         numberOfChickenSaladwithParmesean: 1,
 
-        price6.34,
+        priceFishSticksAndFries:6.34,
         isAddFishSticksAndFries: true,
         totalFishSticksAndFries:6.34,
         numberOfFishSticksAndFries:1,
 
-        price 6.45,
+        priceRavioli: 6.45,
         isAddRavioli:true,
-        ptotalRavioli: 6.45,
+        totalRavioli: 6.45,
         numberOfRavioli: 1,
 
-        price 6.05,
+        priceTortellini: 6.05,
         isAddTortellini:true,
         totalTortellini: 6.05,
         numberOfTortellini: 1,
 
-        price: 5.99,
+        priceBaconEggsAndToast: 5.99,
         isAddBaconEggsAndToast: true,
         totalBaconEggsAndToast: 5.99,
         numberOfBaconEggsAndToast: 1,
@@ -549,10 +604,12 @@ export default {
             var element = document.getElementById("btnFrenchFries")
             element.style.backgroundColor = "#6B00F5";
             this.subtotal = Math.floor((this.subtotal - this.totalFrenchFries)* 100) / 100
+            this.totalFrenchFries = 2.23
+            this.numberOfFrenchFries = 1
         }else if (this.isAddFrenchFries === false){
             var element = document.getElementById("btnFrenchFries")
             element.style.backgroundColor = "black"
-            this.subtotal = Math.floor((this.subtotal + this.FrenchFries.price)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal + this.priceFrenchFries)* 100) / 100
         }
         this.subtotal = Math.floor((this.subtotal + this.orderPrice)* 100) / 100
     },
@@ -562,10 +619,12 @@ export default {
             var element = document.getElementById("btnSalmonAndVegetables")
             element.style.backgroundColor = "#6B00F5";
             this.subtotal = Math.floor((this.subtotal - this.totalSalmonAndVegetables)* 100) / 100
+            this.totalSalmonAndVegetables = 5.12
+            this.numberSalmonAndVegetables = 1
         }else if (this.isAddSalmonAndVegetables === false){
             var element = document.getElementById("btnSalmonAndVegetables")
             element.style.backgroundColor = "black"
-            this.subtotal = Math.floor((this.subtotal + this.SalmonAndVegetables.price)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal + this.priceSalmonAndVegetables)* 100) / 100
         }
     },
     addSpaghettiWithMeatSauce: function(){
@@ -574,10 +633,12 @@ export default {
             var element = document.getElementById("btnSpaghettiWithMeatSauce")
             element.style.backgroundColor = "#6B00F5";
             this.subtotal = Math.floor((this.subtotal - this.totalSpaghettiWithMeatSauce)* 100) / 100
+            this.totalSpaghettiWithMeatSauce = 7.82
+            this.numberOfSpaghettiWithMeatSauce = 1
         }else if (this.isAddSpaghettiWithMeatSauce === false){
             var element = document.getElementById("btnSpaghettiWithMeatSauce")
             element.style.backgroundColor = "black"
-            this.subtotal = Math.floor((this.subtotal + this.SpaghettiWithMeatSauce)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal + this.priceSpaghettiWithMeatSauce)* 100) / 100
         }
     },
     addChickenSaladwithParmesean: function(){
@@ -586,10 +647,12 @@ export default {
             var element = document.getElementById("btnChickenSaladwithParmesean")
             element.style.backgroundColor = "#6B00F5";
             this.subtotal = Math.floor((this.subtotal - this.totalChickenSaladwithParmesean)* 100) / 100
+            this.totalChickenSaladwithParmesean = 6.98
+            this.numberOfChickenSaladwithParmesean = 1
         }else if (this.isAddChickenSaladwithParmesean === false){
             var element = document.getElementById("btnChickenSaladwithParmesean")
             element.style.backgroundColor = "black"
-            this.subtotal = Math.floor((this.subtotal + this.ChickenSaladwithParmesean.price)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal + this.priceChickenSaladwithParmesean)* 100) / 100
         }
     },
     addFishSticksAndFries: function(){
@@ -598,10 +661,12 @@ export default {
             var element = document.getElementById("btnFishSticksAndFries")
             element.style.backgroundColor = "#6B00F5";
             this.subtotal = Math.floor((this.subtotal - this.totalFishSticksAndFries)* 100) / 100
+            this.totalFishSticksAndFries = 6.34
+            this.numberOfFishSticksAndFries = 1
         }else if (this.isAddFishSticksAndFries === false){
             var element = document.getElementById("btnFishSticksAndFries")
             element.style.backgroundColor = "black"
-            this.subtotal = Math.floor((this.subtotal + this.FishSticksAndFries.price)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal + this.priceFishSticksAndFries)* 100) / 100
         }
     },
     addRavioli: function(){
@@ -610,10 +675,12 @@ export default {
             var element = document.getElementById("btnRavioli")
             element.style.backgroundColor = "#6B00F5";
             this.subtotal = Math.floor((this.subtotal - this.totalRavioli)* 100) / 100
+            this.totalRavioli = 6.45
+            this.numberOfRavioli = 1
         }else if (this.isAddRavioli === false){
             var element = document.getElementById("btnRavioli")
             element.style.backgroundColor = "black"
-            this.subtotal = Math.floor((this.subtotal + this.Ravioli.price)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal + this.priceRavioli)* 100) / 100
         }
     },
     addTortellini: function(){
@@ -622,10 +689,12 @@ export default {
             var element = document.getElementById("btnTortellini")
             element.style.backgroundColor = "#6B00F5";
             this.subtotal = Math.floor((this.subtotal - this.totalTortellini)* 100) / 100
+            this.totalTortellini = 6.05
+            this.numberOfTortellini = 1
         }else if (this.isAddTortellini === false){
             var element = document.getElementById("btnTortellini")
             element.style.backgroundColor = "black"
-            this.subtotal = Math.floor((this.subtotal + this.Tortellini.price)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal + this.priceTortellini)* 100) / 100
         }
     },
     addBaconEggsAndToast: function(){
@@ -634,61 +703,131 @@ export default {
             var element = document.getElementById("btnBaconEggsAndToast")
             element.style.backgroundColor = "#6B00F5";
             this.subtotal = Math.floor((this.subtotal - this.totalBaconEggsAndToast)* 100) / 100
+            this.totalBaconEggsAndToast = 5.99
+            this.numberOfBaconEggsAndToast = 1
         }else if (this.isAddBaconEggsAndToast === false){
             var element = document.getElementById("btnBaconEggsAndToast")
             element.style.backgroundColor = "black"
-            this.subtotal = Math.floor((this.subtotal + this.BaconEggsAndToast)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal + this.priceBaconEggsAndToast)* 100) / 100
         }
     },
     toRaiseFrenchFries: function() {
         this.numberOfFrenchFries = this.numberOfFrenchFries + 1
-        this.totalFrenchFries = Math.floor((this.totalFrenchFries + this.FrenchFries.price)* 100) / 100
-        this.subtotal = Math.floor((this.subtotal + this.FrenchFries.price)* 100) / 100
+        this.totalFrenchFries = Math.floor((this.totalFrenchFries + this.priceFrenchFries)* 100) / 100
+        this.subtotal = Math.floor((this.subtotal + this.priceFrenchFries)* 100) / 100
     },
     removeFrenchFries: function() {
         if (this.numberOfFrenchFries > 1) {
             this.numberOfFrenchFries = this.numberOfFrenchFries - 1;
-            this.totalFrenchFries = Math.floor((this.totalFrenchFries - this.FrenchFries.price)* 100) / 100
-            this.subtotal = Math.floor((this.subtotal - this.FrenchFries.price)* 100) / 100
+            this.totalFrenchFries = Math.floor((this.totalFrenchFries - this.priceFrenchFries)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal - this.priceFrenchFries)* 100) / 100
         }else if (this.numberOfFrenchFries === 1){
             this.isAddFrenchFries = true
             var element = document.getElementById("btnFrenchFries");
             element.style.backgroundColor = "#6B00F5";
-            this.subtotal = Math.floor((this.subtotal - this.FrenchFries.price)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal - this.priceFrenchFries)* 100) / 100
         }
     },
     toRaiseSalmonAndVegetables: function() {
         this.numberSalmonAndVegetables = this.numberSalmonAndVegetables + 1
-        this.totalSalmonAndVegetables = Math.floor((this.totalSalmonAndVegetables + this.SalmonAndVegetables.price)* 100) / 100
-        this.subtotal = Math.floor((this.subtotal + this.SalmonAndVegetables.price)* 100) / 100
+        this.totalSalmonAndVegetables = Math.floor((this.totalSalmonAndVegetables + this.priceSalmonAndVegetables)* 100) / 100
+        this.subtotal = Math.floor((this.subtotal + this.priceSalmonAndVegetables)* 100) / 100
     },
     removeSalmonAndVegetables: function() {
         if (this.numberSalmonAndVegetables > 1) {
             this.numberSalmonAndVegetables = this.numberSalmonAndVegetables - 1;
-            this.totalSalmonAndVegetables = Math.floor((this.totalSalmonAndVegetables - this.SalmonAndVegetables.price)* 100) / 100
-            this.subtotal = this.subtotal - Math.floor((this.SalmonAndVegetables.price)* 100) / 100
+            this.totalSalmonAndVegetables = Math.floor((this.totalSalmonAndVegetables - this.priceSalmonAndVegetables)* 100) / 100
+            this.subtotal = this.subtotal - Math.floor((this.priceSalmonAndVegetables)* 100) / 100
         }else if (this.numberSalmonAndVegetables === 1){
             this.isAddSalmonAndVegetables = true
             var element = document.getElementById("btnSalmonAndVegetables")
             element.style.backgroundColor = "#6B00F5";
-            this.subtotal = Math.floor((this.subtotal - this.SalmonAndVegetables.price)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal - this.priceSalmonAndVegetables)* 100) / 100
+        }
+    },
+    toRaiseSpaghettiWithMeatSauce: function() {
+        this.numberOfSpaghettiWithMeatSauce = this.numberOfSpaghettiWithMeatSauce + 1
+        this.totalSpaghettiWithMeatSauce = Math.floor((this.totalSpaghettiWithMeatSauce + this.priceSpaghettiWithMeatSauce)* 100) / 100
+        this.subtotal = Math.floor((this.subtotal + this.priceSpaghettiWithMeatSauce)* 100) / 100
+    },
+    removeSpaghettiWithMeatSauce: function() {
+        if (this.numberOfSpaghettiWithMeatSauce > 1) {
+            this.numberOfSpaghettiWithMeatSauce = this.numberOfSpaghettiWithMeatSauce - 1;
+            this.totalSpaghettiWithMeatSauce = Math.floor((this.totalSpaghettiWithMeatSauce - this.priceSpaghettiWithMeatSauce)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal - this.priceSpaghettiWithMeatSauce)* 100) / 100
+        }else if (this.numberOfSpaghettiWithMeatSauce === 1){
+            this.isAddSpaghettiWithMeatSauce = true
+            var element = document.getElementById("btnFrenchFries");
+            element.style.backgroundColor = "#6B00F5";
+            this.subtotal = Math.floor((this.subtotal - this.priceSpaghettiWithMeatSauce)* 100) / 100
         }
     },
     toRaiseChickenSaladwithParmesean: function() {
         this.numberOfChickenSaladwithParmesean = this.numberOfChickenSaladwithParmesean + 1
-        this.totalChickenSaladwithParmesean = Math.floor((this.totalChickenSaladwithParmesean + this.ChickenSaladwithParmesean.price)* 100) / 100
-        this.subtotal = Math.floor((this.subtotal + this.ChickenSaladwithParmesean.price)* 100) / 100
+        this.totalChickenSaladwithParmesean = Math.floor((this.totalChickenSaladwithParmesean + this.priceChickenSaladwithParmesean)* 100) / 100
+        this.subtotal = Math.floor((this.subtotal + this.priceChickenSaladwithParmesean)* 100) / 100
     },
     removeChickenSaladwithParmesean: function() {
         if (this.numberOfChickenSaladwithParmesean > 1) {
             this.numberOfChickenSaladwithParmesean = this.numberOfChickenSaladwithParmesean - 1;
-            this.totalChickenSaladwithParmesean = Math.floor((this.totalChickenSaladwithParmesean - this.ChickenSaladwithParmesean.price)* 100) / 100
-            this.subtotal = Math.floor((this.subtotal - this.ChickenSaladwithParmesean.price)* 100) / 100
+            this.totalChickenSaladwithParmesean = Math.floor((this.totalChickenSaladwithParmesean - this.priceChickenSaladwithParmesean)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal - this.priceChickenSaladwithParmesean)* 100) / 100
         }else if (this.numberOfChickenSaladwithParmesean === 1){
             this.isAddChickenSaladwithParmesean = true
             var element = document.getElementById("btnFrenchFries");
             element.style.backgroundColor = "#6B00F5";
-            this.subtotal = Math.floor((this.subtotal - this.ChickenSaladwithParmesean.price)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal - this.priceChickenSaladwithParmesean)* 100) / 100
+        }
+    },
+    toRaiseFishSticksAndFries: function() {
+        this.numberOfFishSticksAndFries = this.numberOfFishSticksAndFries + 1
+        this.totalFishSticksAndFries = Math.floor((this.totalFishSticksAndFries + this.priceFishSticksAndFries)* 100) / 100
+        this.subtotal = Math.floor((this.subtotal + this.priceFishSticksAndFries)* 100) / 100
+    },
+    removeFishSticksAndFries: function() {
+        if (this.numberOfFishSticksAndFries > 1) {
+            this.numberOfFishSticksAndFries = this.numberOfFishSticksAndFries - 1
+            this.totalFishSticksAndFries = Math.floor((this.totalFishSticksAndFries - this.priceFishSticksAndFries)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal - this.priceFishSticksAndFries)* 100) / 100
+        }else if (this.numberOfFishSticksAndFries === 1){
+            this.isAddFishSticksAndFries = true
+            var element = document.getElementById("btnFrenchFries")
+            element.style.backgroundColor = "#6B00F5";
+            this.subtotal = Math.floor((this.subtotal - this.priceFishSticksAndFries)* 100) / 100
+        }
+    },
+    toRaiseRavioli: function() {
+        this.numberOfRavioli = this.numberOfRavioli + 1
+        this.totalRavioli = Math.floor((this.totalRavioli + this.priceRavioli)* 100) / 100
+        this.subtotal = Math.floor((this.subtotal + this.priceRavioli)* 100) / 100
+    },
+    removeRavioli: function() {
+        if (this.numberOfRavioli > 1) {
+            this.numberOfRavioli = this.numberOfRavioli - 1
+            this.totalRavioli = Math.floor((this.totalRavioli - this.priceRavioli)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal - this.priceRavioli)* 100) / 100
+        }else if (this.numberOfRavioli === 1){
+            this.isAddRavioli = true
+            var element = document.getElementById("btnFrenchFries")
+            element.style.backgroundColor = "#6B00F5";
+            this.subtotal = Math.floor((this.subtotal - this.priceRavioli)* 100) / 100
+        }
+    },
+    toRaiseTortellini: function() {
+        this.numberOfTortellini = this.numberOfTortellini + 1
+        this.totalTortellini = Math.floor((this.totalTortellini + this.priceTortellini)* 100) / 100
+        this.subtotal = Math.floor((this.subtotal + this.priceTortellini)* 100) / 100
+    },
+    removeTortellini: function() {
+        if (this.numberOfTortellini > 1) {
+            this.numberOfTortellini = this.numberOfTortellini - 1
+            this.totalTortellini = Math.floor((this.totalTortellini - this.priceTortellini)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal - this.priceTortellini)* 100) / 100
+        }else if (this.numberOfTortellini === 1){
+            this.isAddTortellini = true
+            var element = document.getElementById("btnFrenchFries")
+            element.style.backgroundColor = "#6B00F5";
+            this.subtotal = Math.floor((this.subtotal - this.priceTortellini)* 100) / 100
         }
     },
   },
