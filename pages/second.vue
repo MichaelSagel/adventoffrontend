@@ -607,7 +607,7 @@ export default {
             this.isAddFrenchFries = true
             var element = document.getElementById("btnFrenchFries");
             element.style.backgroundColor = "#6B00F5";
-            this.subtotal = this.subtotal - this.priceFrenchFries
+            this.subtotal = Math.floor((this.subtotal - this.priceFrenchFries)* 100) / 100
             
         }
     },
@@ -619,13 +619,13 @@ export default {
     removeSalmonAndVegetablesNumber: function() {
         if (this.numberSalmonAndVegetables > 1) {
             this.numberSalmonAndVegetables = this.numberSalmonAndVegetables - 1;
-            this.totalSalmonAndVegetables = this.totalSalmonAndVegetables - this.priceSalmonAndVegetables
-            this.subtotal = this.subtotal - this.priceSalmonAndVegetables
+            this.totalSalmonAndVegetables = Math.floor((this.totalSalmonAndVegetables - this.priceSalmonAndVegetables)* 100) / 100
+            this.subtotal = this.subtotal - Math.floor((this.priceSalmonAndVegetables)* 100) / 100
         }else if (this.numberSalmonAndVegetables === 1){
             this.isAddSalmonAndVegetables = true
             var element = document.getElementById("btnSalmonAndVegetables")
             element.style.backgroundColor = "#6B00F5";
-            this.subtotal = this.subtotal - this.priceSalmonAndVegetables
+            this.subtotal = Math.floor((this.subtotal - this.priceSalmonAndVegetables)* 100) / 100
         }
     },
     toRaiseChickenSaladwithParmeseanNumber: function() {
@@ -636,13 +636,13 @@ export default {
     removeChickenSaladwithParmesean: function() {
         if (this.numberOfChickenSaladwithParmesean > 1) {
             this.numberOfChickenSaladwithParmesean = this.numberOfChickenSaladwithParmesean - 1;
-        this.totalChickenSaladwithParmesean = this.totalChickenSaladwithParmesean - this.priceChickenSaladwithParmesean
-            this.subtotal = this.subtotal - this.priceChickenSaladwithParmesean;
+        this.totalChickenSaladwithParmesean = Math.floor((this.totalChickenSaladwithParmesean - this.priceChickenSaladwithParmesean)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal - this.priceChickenSaladwithParmesean)* 100) / 100
         }else if (this.numberOfChickenSaladwithParmesean === 1){
             this.isAddFrenchFries = true
             var element = document.getElementById("btnFrenchFries");
             element.style.backgroundColor = "#6B00F5";
-            this.subtotal = this.subtotal - this.priceChickenSaladwithParmesean;
+            this.subtotal = Math.floor((this.subtotal - this.priceChickenSaladwithParmesean)* 100) / 100
         }
     },
   },
