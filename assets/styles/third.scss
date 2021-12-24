@@ -1,0 +1,23 @@
+.third{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.piano{
+    display: flex;
+}
+.test{
+    position:absolute;
+    left: 207px;
+    top: 473px;
+    background-color: red;
+    width: 73px;
+    height: 410px;
+    background: #8734f7;
+    -webkit-transform: skew(50deg);
+    -moz-transform: skew(10deg);
+    -o-transform: skew(10deg);
+    transform: skew(3.1deg);
+}
