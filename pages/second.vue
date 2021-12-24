@@ -517,6 +517,40 @@
                         </div>
                         <div class="card-line-tamplate"></div>
                     </template>
+                    <template v-if="!isAddBaconEggsAndToast">
+                        <div class="card-item-tamplate">
+                            <img class="card-img" src="./../assets/images/second/plate__bacon-eggs.png"/>
+                            <div class="numberOfOrders">
+                                {{numberOfBaconEggsAndToast}}
+                            </div>
+                            <div class="card-info">
+                                <div>
+                                    Bacon, Eggs, and Toast
+                                </div>
+                                <div class="card-info-price">${{priceBaconEggsAndToast}}</div>
+                            
+                                <div class="amount-of-orders">
+                                    <div 
+                                        @click="removeBaconEggsAndToast"
+                                        class="minus-img"
+                                    > 
+                                        <img src="./../assets/images/second/chevron.svg"/>
+                                    </div>
+                                        {{numberOfBaconEggsAndToast}}
+                                    <div 
+                                        @click="toRaiseBaconEggsAndToast"
+                                        class="plus-img"
+                                    >
+                                        <img src="./../assets/images/second/chevron.svg"/>
+                                    </div>
+                                    <div class="amount-of-orders-price">
+                                        ${{totalBaconEggsAndToast}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-line-tamplate"></div>
+                    </template>
                 </div>
                 <div class="card-line"></div>
             </div>
@@ -757,7 +791,7 @@ export default {
             this.subtotal = Math.floor((this.subtotal - this.priceSpaghettiWithMeatSauce)* 100) / 100
         }else if (this.numberOfSpaghettiWithMeatSauce === 1){
             this.isAddSpaghettiWithMeatSauce = true
-            var element = document.getElementById("btnFrenchFries");
+            var element = document.getElementById("btnSpaghettiWithMeatSauce");
             element.style.backgroundColor = "#6B00F5";
             this.subtotal = Math.floor((this.subtotal - this.priceSpaghettiWithMeatSauce)* 100) / 100
         }
@@ -774,7 +808,7 @@ export default {
             this.subtotal = Math.floor((this.subtotal - this.priceChickenSaladwithParmesean)* 100) / 100
         }else if (this.numberOfChickenSaladwithParmesean === 1){
             this.isAddChickenSaladwithParmesean = true
-            var element = document.getElementById("btnFrenchFries");
+            var element = document.getElementById("btnChickenSaladwithParmesean");
             element.style.backgroundColor = "#6B00F5";
             this.subtotal = Math.floor((this.subtotal - this.priceChickenSaladwithParmesean)* 100) / 100
         }
@@ -791,7 +825,7 @@ export default {
             this.subtotal = Math.floor((this.subtotal - this.priceFishSticksAndFries)* 100) / 100
         }else if (this.numberOfFishSticksAndFries === 1){
             this.isAddFishSticksAndFries = true
-            var element = document.getElementById("btnFrenchFries")
+            var element = document.getElementById("btnFishSticksAndFries")
             element.style.backgroundColor = "#6B00F5";
             this.subtotal = Math.floor((this.subtotal - this.priceFishSticksAndFries)* 100) / 100
         }
@@ -808,7 +842,7 @@ export default {
             this.subtotal = Math.floor((this.subtotal - this.priceRavioli)* 100) / 100
         }else if (this.numberOfRavioli === 1){
             this.isAddRavioli = true
-            var element = document.getElementById("btnFrenchFries")
+            var element = document.getElementById("btnRavioli")
             element.style.backgroundColor = "#6B00F5";
             this.subtotal = Math.floor((this.subtotal - this.priceRavioli)* 100) / 100
         }
@@ -825,9 +859,26 @@ export default {
             this.subtotal = Math.floor((this.subtotal - this.priceTortellini)* 100) / 100
         }else if (this.numberOfTortellini === 1){
             this.isAddTortellini = true
-            var element = document.getElementById("btnFrenchFries")
+            var element = document.getElementById("btnTortellini")
             element.style.backgroundColor = "#6B00F5";
             this.subtotal = Math.floor((this.subtotal - this.priceTortellini)* 100) / 100
+        }
+    },
+    toRaiseBaconEggsAndToast: function() {
+        this.numberOfBaconEggsAndToast = this.numberOfBaconEggsAndToast + 1
+        this.totalBaconEggsAndToast = Math.floor((this.totalBaconEggsAndToast + this.priceBaconEggsAndToast)* 100) / 100
+        this.subtotal = Math.floor((this.subtotal + this.priceBaconEggsAndToast)* 100) / 100
+    },
+    removeBaconEggsAndToast: function() {
+        if (this.numberOfBaconEggsAndToast > 1) {
+            this.numberOfBaconEggsAndToast = this.numberOfBaconEggsAndToast - 1
+            this.totalBaconEggsAndToast = Math.floor((this.totalBaconEggsAndToast - this.priceBaconEggsAndToast)* 100) / 100
+            this.subtotal = Math.floor((this.subtotal - this.priceBaconEggsAndToast)* 100) / 100
+        }else if (this.numberOfBaconEggsAndToast === 1){
+            this.isAddBaconEggsAndToast = true
+            var element = document.getElementById("btnBaconEggsAndToast")
+            element.style.backgroundColor = "#6B00F5";
+            this.subtotal = Math.floor((this.subtotal - this.priceBaconEggsAndToast)* 100) / 100
         }
     },
   },
