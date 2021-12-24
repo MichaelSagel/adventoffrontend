@@ -212,3 +212,21 @@
 .amount-of-orders-price{
     font-size: 32px;
 }
+.bg-left{
+    z-index: -1;;
+    position:absolute;
+    top: 0%;
+    left: 0%;
+}
+.bg-top-right{
+    z-index: -1;
+    position:absolute;
+    top: 0%;
+    right: 0%;
+}
+.bg-btm-right{
+    z-index: -1;
+    position:absolute;
+    right: 0%;
+    bottom: 0%;
+}

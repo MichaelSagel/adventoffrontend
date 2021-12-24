@@ -1,5 +1,10 @@
 <template>
     <div class="second">
+        <div class="background">
+            <img class="bg-left" src="./../assets/images/second/bg__left.svg"/>
+            <img class="bg-top-right" src="./../assets/images/second/bg__top-right.svg"/>
+            <img class="bg-btm-right" src="./../assets/images/second/bg__btm-right.svg"/>
+        </div>
         <div class="menu">
             <div>
                 <h1 class="to-go-menu menu-item">

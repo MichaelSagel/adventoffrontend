@@ -32,8 +32,11 @@ body {
   .first-mode body {
     background-color: #2B2A30;
     color: #ebf4f1;
-  }
-  .second-mode body {
+  }.second-mode body {
     background-color: #EFF0F6;
+    color: #433422;
+  }
+  .third-mode body {
+    background-color: #37B2C3;
     color: #433422;
   }
