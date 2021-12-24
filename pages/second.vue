@@ -593,30 +593,29 @@ export default {
             this.subtotal = this.subtotal + this.priceBaconEggsAndToast;
         }
     },
-    toRaiseFrenchFriesNumber: function() {
+    toRaiseFrenchFries: function() {
         this.numberOfFrenchFries = this.numberOfFrenchFries + 1
         this.totalFrenchFries = Math.floor((this.totalFrenchFries + this.priceFrenchFries)* 100) / 100
         this.subtotal = Math.floor((this.subtotal + this.priceFrenchFries)* 100) / 100
     },
-    removeFrenchFriesNumber: function() {
+    removeFrenchFries: function() {
         if (this.numberOfFrenchFries > 1) {
             this.numberOfFrenchFries = this.numberOfFrenchFries - 1;
-        this.totalFrenchFries = Math.floor((this.totalFrenchFries - this.priceFrenchFries)* 100) / 100
+            this.totalFrenchFries = Math.floor((this.totalFrenchFries - this.priceFrenchFries)* 100) / 100
             this.subtotal = Math.floor((this.subtotal - this.priceFrenchFries)* 100) / 100
         }else if (this.numberOfFrenchFries === 1){
             this.isAddFrenchFries = true
             var element = document.getElementById("btnFrenchFries");
             element.style.backgroundColor = "#6B00F5";
             this.subtotal = Math.floor((this.subtotal - this.priceFrenchFries)* 100) / 100
-            
         }
     },
-    toRaiseSalmonAndVegetablesNumber: function() {
+    toRaiseSalmonAndVegetables: function() {
         this.numberSalmonAndVegetables = this.numberSalmonAndVegetables + 1
         this.totalSalmonAndVegetables = Math.floor((this.totalSalmonAndVegetables + this.priceSalmonAndVegetables)* 100) / 100
         this.subtotal = this.subtotal + Math.floor((this.priceSalmonAndVegetables)* 100) / 100
     },
-    removeSalmonAndVegetablesNumber: function() {
+    removeSalmonAndVegetables: function() {
         if (this.numberSalmonAndVegetables > 1) {
             this.numberSalmonAndVegetables = this.numberSalmonAndVegetables - 1;
             this.totalSalmonAndVegetables = Math.floor((this.totalSalmonAndVegetables - this.priceSalmonAndVegetables)* 100) / 100
@@ -628,7 +627,7 @@ export default {
             this.subtotal = Math.floor((this.subtotal - this.priceSalmonAndVegetables)* 100) / 100
         }
     },
-    toRaiseChickenSaladwithParmeseanNumber: function() {
+    toRaiseChickenSaladwithParmesean: function() {
         this.numberOfChickenSaladwithParmesean = this.numberOfChickenSaladwithParmesean + 1
         this.totalChickenSaladwithParmesean = Math.floor((this.totalChickenSaladwithParmesean + this.priceChickenSaladwithParmesean)* 100) / 100
         this.subtotal = this.subtotal + Math.floor((this.priceChickenSaladwithParmesean)* 100) / 100
@@ -636,10 +635,10 @@ export default {
     removeChickenSaladwithParmesean: function() {
         if (this.numberOfChickenSaladwithParmesean > 1) {
             this.numberOfChickenSaladwithParmesean = this.numberOfChickenSaladwithParmesean - 1;
-        this.totalChickenSaladwithParmesean = Math.floor((this.totalChickenSaladwithParmesean - this.priceChickenSaladwithParmesean)* 100) / 100
+            this.totalChickenSaladwithParmesean = Math.floor((this.totalChickenSaladwithParmesean - this.priceChickenSaladwithParmesean)* 100) / 100
             this.subtotal = Math.floor((this.subtotal - this.priceChickenSaladwithParmesean)* 100) / 100
         }else if (this.numberOfChickenSaladwithParmesean === 1){
-            this.isAddFrenchFries = true
+            this.isAddChickenSaladwithParmesean = true
             var element = document.getElementById("btnFrenchFries");
             element.style.backgroundColor = "#6B00F5";
             this.subtotal = Math.floor((this.subtotal - this.priceChickenSaladwithParmesean)* 100) / 100
