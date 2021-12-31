@@ -1,0 +1,74 @@
+.first {
+  min-height: 97vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-or-stop{
+  position:relative;
+  bottom: 200px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 26px;
+}
+
+.gear{
+  position:relative;
+  bottom: 200px;
+  cursor: pointer;
+}
+
+.base-timer {
+  position: relative;
+  width: 600px;
+  height: 600px;
+
+  &__svg {
+    transform: scaleX(-1);
+  }
+
+  &__circle {
+    fill: none;
+    stroke: none;
+  }
+
+  &__path-elapsed {
+    stroke-width: 2px;
+    stroke: black;
+  }
+
+  &__path-remaining {
+    stroke-width: 2px;
+    stroke-linecap: round;
+    transform: rotate(270deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+
+    &.green {
+      color: rgb(65, 184, 131);
+    }
+
+    &.orange {
+      color: orange;
+    }
+
+    &.red {
+      color: red;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+  }
+}
