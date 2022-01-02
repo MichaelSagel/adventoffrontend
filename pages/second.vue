@@ -26,11 +26,7 @@
           <div class="menu-item-info">
             <div class="menu-title">{{ item.name }}</div>
             <div class="price">${{ item.price }}</div>
-            <div 
-              class="btn-bay" 
-              id="btnFrenchFries" 
-              @click="addProduct(item)"
-            >
+            <div class="btn-bay" id="btnFrenchFries" @click="addProduct(item)">
               <template v-if="item.isAdd"> Add to Cart </template>
               <template v-else>
                 <img
@@ -49,38 +45,35 @@
       <div class="your-card">Your Card</div>
       <div class="card-content">
         <div class="card-item">
-            <div 
-                v-for="item in card" 
-                :key="item.id"
-            >
-              <template>
-                <div class="card-item-tamplate">
-                  <img class="card-img" :src="item.img" />
-                  <div class="numberOfOrders">
-                    {{ item.count }}
+          <div v-for="item in card" :key="item.id">
+            <template>
+              <div class="card-item-tamplate">
+                <img class="card-img" :src="item.img" />
+                <div class="numberOfOrders">
+                  {{ item.count }}
+                </div>
+                <div class="card-info">
+                  <div>
+                    {{ item.name = 342 }}
                   </div>
-                  <div class="card-info">
-                    <div>
-                      {{ item.name }}
-                    </div>
-                    <div class="card-info-price">${{item.price}}</div>
+                  <div class="card-info-price">${{ item.price }}</div>
 
-                    <div class="amount-of-orders">
-                      <div @click="removeProduct(item.id)" class="minus-img">
-                        <img src="./../assets/images/second/chevron.svg" />
-                      </div>
-                      {{ item.count }}
-                      <div @click="raiseProduct(item.id)" class="plus-img">
-                        <img src="./../assets/images/second/chevron.svg" />
-                      </div>
-                      <div class="amount-of-orders-price">
-                        ${{item.price * item.count}}
-                      </div>
+                  <div class="amount-of-orders">
+                    <div @click="removeProduct(item.id)" class="minus-img">
+                      <img src="./../assets/images/second/chevron.svg" />
+                    </div>
+                    {{ item.count }}
+                    <div @click="raiseProduct(item.id)" class="plus-img">
+                      <img src="./../assets/images/second/chevron.svg" />
+                    </div>
+                    <div class="amount-of-orders-price">
+                      ${{ item.price * item.count }}
                     </div>
                   </div>
                 </div>
-                <div class="card-line-tamplate"></div>
-              </template>
+              </div>
+              <div class="card-line-tamplate"></div>
+            </template>
           </div>
         </div>
         <div class="card-line"></div>
@@ -188,29 +181,28 @@ export default {
         },
       ],
 
-      subtotal: 10,
+      subtotal: 0,
 
       card: [],
-
     };
   },
   methods: {
     addProduct: function (product) {
       var index = this.card.indexOf(product);
       if (index > -1) {
-          this.card.splice(index, 1);
-      }else{
+        this.card.splice(index, 1);
+        this.subtotal = Math.floor((this.subtotal - (product.price * product.count)) * 100) / 100;
+      } else {
         this.card.push(product);
-        this.subtotal = this.subtotal + this.card.price;
-      }        
+        this.subtotal = Math.floor((this.subtotal + (product.price * product.count)) * 100) / 100;
+      }
     },
 
-    raiseProduct: function (sum) {
-      this.card.count = this.card.count + 1;
-      this.subtotal =
-        Math.floor((this.subtotal * this.card.count * this.card.price) * 100) / 100;
+    raiseProduct: function (productId) {
+      var index = this.card.indexOf(productId);
+      this.index.price = this.index.price + this.index.price;
     },
-    removeProduct: function (sum) {
+    removeProduct: function () {
       if (this.numberOfFrenchFries > 1) {
         this.numberOfFrenchFries = this.numberOfFrenchFries - 1;
         this.totalFrenchFries =
@@ -226,7 +218,7 @@ export default {
           Math.floor((this.subtotal - this.priceFrenchFries) * 100) / 100;
       }
     },
-  }
+  },
 };
 </script>
 
