@@ -26,7 +26,11 @@
           <div class="menu-item-info">
             <div class="menu-title">{{ item.name }}</div>
             <div class="price">${{ item.price }}</div>
-            <div class="btn-bay" id="btnFrenchFries" @click="toggleProduct(item)">
+            <div
+              class="btn-bay"
+              id="btnFrenchFries"
+              @click="toggleProduct(item)"
+            >
               <template v-if="item.isAdd"> Add to Cart </template>
               <template v-else>
                 <img
@@ -54,7 +58,7 @@
                 </div>
                 <div class="card-info">
                   <div>
-                    {{ (item.name) }}
+                    {{ item.name }}
                   </div>
                   <div class="card-info-price">${{ item.price }}</div>
 
@@ -66,9 +70,7 @@
                     <div @click="raiseProduct(item.id)" class="plus-img">
                       <img src="./../assets/images/second/chevron.svg" />
                     </div>
-                    <div class="amount-of-orders-price">
-                      ${{ cardsum }}
-                    </div>
+                    <div class="amount-of-orders-price">${{ cardsum }}</div>
                   </div>
                 </div>
               </div>
@@ -85,15 +87,11 @@
         </div>
         <div class="sum-layout">
           Tax:
-          <div class="sum-container">
-            $ {{tax}}
-          </div>
+          <div class="sum-container">$ {{ tax }}</div>
         </div>
         <div class="sum-layout">
           Total:
-          <div class="sum-container">
-            $ {{total}}
-          </div>
+          <div class="sum-container">$ {{ total }}</div>
         </div>
       </div>
     </div>
@@ -186,54 +184,52 @@ export default {
   },
 
   computed: {
-    cardsum (){
+    cardsum() {
       let sum = 0;
-      this.card.forEach(function(product){
-        sum += (product.price * product.count);
-      })
+      this.card.forEach(function (product) {
+        sum += product.price * product.count;
+      });
       return sum.toFixed(2);
     },
-    tax(){
+    tax() {
       let tax = this.cardsum * 0.0975;
       return tax.toFixed(2);
     },
-    total(){
-      let total =  (this.cardsum * 1) + (this.tax * 1);
+    total() {
+      let total = this.cardsum * 1 + this.tax * 1;
       return total.toFixed(2);
     },
   },
 
   methods: {
     toggleProduct: function (product) {
-        const index = this.card.findIndex(function(element){
-          return element.id === product.id;
-        })
-      if (
-        index === -1
-      ) {
+      const index = this.card.findIndex(function (element) {
+        return element.id === product.id;
+      });
+      if (index === -1) {
         this.card.push({ ...product });
-      }else{
-        this.card.splice(index,1)
+      } else {
+        this.card.splice(index, 1);
       }
     },
 
     raiseProduct: function (productId) {
-     const product = this.card.find(function(element){
-          return element.id === productId;
-        })
-        product.count +=1;
+      const product = this.card.find(function (element) {
+        return element.id === productId;
+      });
+      product.count += 1;
     },
     removeProduct: function (productId) {
-      const product = this.card.find(function(element){
+      const product = this.card.find(function (element) {
         return element.id === productId;
-      })
-      const index = this.card.findIndex(function(element){
-          return element.id === productId;
-        })
-      if(product.count > 1){
-        product.count -=1;
-      }else{
-        this.card.splice(index,1)
+      });
+      const index = this.card.findIndex(function (element) {
+        return element.id === productId;
+      });
+      if (product.count > 1) {
+        product.count -= 1;
+      } else {
+        this.card.splice(index, 1);
       }
     },
   },
