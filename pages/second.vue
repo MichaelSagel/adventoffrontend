@@ -26,7 +26,7 @@
           <div class="menu-item-info">
             <div class="menu-title">{{ item.name }}</div>
             <div class="price">${{ item.price }}</div>
-            <div class="btn-bay" id="btnFrenchFries" @click="addProduct(item)">
+            <div class="btn-bay" id="btnFrenchFries" @click="toggleProduct(item)">
               <template v-if="item.isAdd"> Add to Cart </template>
               <template v-else>
                 <img
@@ -54,7 +54,7 @@
                 </div>
                 <div class="card-info">
                   <div>
-                    {{ item.name = 342 }}
+                    {{ (item.name) }}
                   </div>
                   <div class="card-info-price">${{ item.price }}</div>
 
@@ -67,7 +67,7 @@
                       <img src="./../assets/images/second/chevron.svg" />
                     </div>
                     <div class="amount-of-orders-price">
-                      ${{ item.price * item.count }}
+                      ${{ cardsum }}
                     </div>
                   </div>
                 </div>
@@ -81,18 +81,18 @@
       <div class="sum">
         <div class="sum-layout">
           Subtotal:
-          <div class="sum-container">$ {{ subtotal }}</div>
+          <div class="sum-container">$ {{ cardsum }}</div>
         </div>
         <div class="sum-layout">
           Tax:
           <div class="sum-container">
-            $ {{ Math.floor(subtotal * 0.0975 * 100) / 100 }}
+            $ {{tax}}
           </div>
         </div>
         <div class="sum-layout">
           Total:
           <div class="sum-container">
-            $ {{ Math.floor((subtotal + subtotal * 0.0975) * 100) / 100 }}
+            $ {{total}}
           </div>
         </div>
       </div>
@@ -181,41 +181,59 @@ export default {
         },
       ],
 
-      subtotal: 0,
-
       card: [],
     };
   },
+
+  computed: {
+    cardsum (){
+      let sum = 0;
+      this.card.forEach(function(product){
+        sum += (product.price * product.count);
+      })
+      return sum.toFixed(2);
+    },
+    tax(){
+      let tax = this.cardsum * 0.0975;
+      return tax.toFixed(2);
+    },
+    total(){
+      let total =  (this.cardsum * 1) + (this.tax * 1);
+      return total.toFixed(2);
+    },
+  },
+
   methods: {
-    addProduct: function (product) {
-      var index = this.card.indexOf(product);
-      if (index > -1) {
-        this.card.splice(index, 1);
-        this.subtotal = Math.floor((this.subtotal - (product.price * product.count)) * 100) / 100;
-      } else {
-        this.card.push(product);
-        this.subtotal = Math.floor((this.subtotal + (product.price * product.count)) * 100) / 100;
+    toggleProduct: function (product) {
+        const index = this.card.findIndex(function(element){
+          return element.id === product.id;
+        })
+      if (
+        index === -1
+      ) {
+        this.card.push({ ...product });
+      }else{
+        this.card.splice(index,1)
       }
     },
 
     raiseProduct: function (productId) {
-      var index = this.card.indexOf(productId);
-      this.index.price = this.index.price + this.index.price;
+     const product = this.card.find(function(element){
+          return element.id === productId;
+        })
+        product.count +=1;
     },
-    removeProduct: function () {
-      if (this.numberOfFrenchFries > 1) {
-        this.numberOfFrenchFries = this.numberOfFrenchFries - 1;
-        this.totalFrenchFries =
-          Math.floor((this.totalFrenchFries - this.priceFrenchFries) * 100) /
-          100;
-        this.subtotal =
-          Math.floor((this.subtotal - this.priceFrenchFries) * 100) / 100;
-      } else if (this.numberOfFrenchFries === 1) {
-        this.isAddFrenchFries = true;
-        var element = document.getElementById("btnFrenchFries");
-        element.style.backgroundColor = "#6B00F5";
-        this.subtotal =
-          Math.floor((this.subtotal - this.priceFrenchFries) * 100) / 100;
+    removeProduct: function (productId) {
+      const product = this.card.find(function(element){
+        return element.id === productId;
+      })
+      const index = this.card.findIndex(function(element){
+          return element.id === productId;
+        })
+      if(product.count > 1){
+        product.count -=1;
+      }else{
+        this.card.splice(index,1)
       }
     },
   },
