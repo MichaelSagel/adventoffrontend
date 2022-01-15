@@ -28,10 +28,9 @@
             <div class="price">${{ item.price }}</div>
             <div
               class="btn-bay"
-              id="btnFrenchFries"
               @click="toggleProduct(item)"
             >
-              <template v-if="item.isAdd"> Add to Cart </template>
+              <template v-if="item.isAdd">Add to Cart</template>
               <template v-else>
                 <img
                   class="img-check"
@@ -53,7 +52,7 @@
             <template>
               <div class="card-item-tamplate">
                 <img class="card-img" :src="item.img" />
-                <div class="numberOfOrders">
+                <div class="number-of-orders">
                   {{ item.count }}
                 </div>
                 <div class="card-info">
@@ -208,8 +207,10 @@ export default {
       });
       if (index === -1) {
         this.card.push({ ...product });
+        product.isAdd = false;
       } else {
         this.card.splice(index, 1);
+        product.isAdd = true;
       }
     },
 
