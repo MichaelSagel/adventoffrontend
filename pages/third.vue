@@ -20,13 +20,13 @@
       <div class="firstBlackKey pink"></div>
        <div class="secondBlackKey pink"></div>
      <div class="thirdBlackKey pink"></div>
-      <!-- <div class="fourthBlackKey pink"></div>
+       <div class="fourthBlackKey pink"></div>
       <div class="fifthBlackKey pink"></div>
       <div class="sixthBlackKey pink"></div>
       <div class="seventhBlackKey pink"></div>
       <div class="eighthBlackKey pink"></div>
       <div class="ninthBlackKey pink"></div>
-      <div class="tenthBlackKey pink"></div> -->
+      <div class="tenthBlackKey pink"></div>
     </div>
   </div>
 </template>

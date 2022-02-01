@@ -15,58 +15,58 @@
     align-items: center;
  }
 .firstWhiteKey{
-    left: 40px;
+    left: 540px;
     clip-path: polygon(12% 9.5%, 88% 7%, 96% 91%, 31% 91%);
 }
 .secondWhiteKey{
-    left: 40px;
-    clip-path: polygon(0% 13.5%, 86% 8.5%, 97% 93%, 29% 93%);
+    left: 540px;
+    clip-path: polygon(0% 13.5%, 86% 8.5%, 98% 93%, 29% 93%);
 }
 .thirdWhiteKey{
-    left: 20px;
-    clip-path: polygon(13% 6%, 94% 8%, 88% 92%, 33% 93%);
+    left: 520px;
+    clip-path: polygon(13% 6%, 94% 8%, 88% 92.5%, 33% 93%);
 }
 .fourthWhiteKey{
-    left: 17px;
+    left: 518px;
     clip-path: polygon(13% 11%, 100% 8%, 80% 92.5%, 24% 92.5%);
 }
 .fifthWhiteKey{
-    left: 1px;
-    clip-path: polygon(38% 8%, 100% 8.5%, 94% 92.5%, 3.5% 92.5%);
+    left: 502px;
+    clip-path: polygon(38% 8%, 100% 8.5%, 94% 92.5%, 3% 92.5%);
 }
 .sixthWhiteKey{
+    left: 500px;
     clip-path: polygon(29% 8%, 80% 8%, 93.5% 90%, 3% 93%);
 }
 .seventhWhiteKey{
-    right:5px;
+    left: 496px;
     clip-path: polygon(8% 10%, 96% 7%, 72% 91.5%, 17% 91.5%);
 }
 .eighthWhiteKey{
-    right: 10px;
-    clip-path: polygon(10% 7%, 99.5% 7%, 63% 91.5%, 1% 91.5%);
+    left: 490px;
+    clip-path: polygon(10% 7%, 99.5% 7%, 64% 91.5%, 1% 91.5%);
 }
 .ninthWhiteKey{
-    right: 25px;
-    clip-path: polygon(24% 7%, 77.5% 7.2%, 88.5% 89%, 0% 91.5%);
+    left: 475px;
+    clip-path: polygon(24% 7%, 78% 7.2%, 89% 89%, 0% 92%);
 }
 .tenthWhiteKey{
-    right: 20px;
+    left: 481px;
     clip-path: polygon(9% 7%, 63% 7%, 80% 94%, 2.5% 92%);
 }
 .eleventhWhiteKey{
-    right: 44px;
+    left: 456px;
     clip-path: polygon(1% 6.8%, 72% 6.5%, 100% 86.5%, 12% 91%);
 }
 .twelfthWhiteKey{
-    right: 50px;
-    clip-path: polygon(11% 8.5%, 70% 8.5%, 92% 90%, 15% 93%);
+    left: 450px;
+    clip-path: polygon(11% 8.5%, 73% 8.5%, 92% 90%, 15% 93%);
 }
 .thirteenthWhiteKey{
-    right: 76px;
+    left: 424px;
     clip-path: polygon(15% 11%, 100% 9%, 81% 92.7%, 25% 93%);
 }
 .yellow{
-    z-index: -2;
     position: relative;
     top: 11px;
     width: 115px;
@@ -87,19 +87,48 @@
     bottom: 90px;
     width: 100px;
     height: 300px;
-    background-color: green;
+    background-color: black;
+}
+.pink:hover{
+    background-color: #f40082;
 }
 .firstBlackKey{
-    right: 1350px;
+    right: 900px;
     clip-path: polygon(9% 9%, 81% 8.5%, 87% 92%, 30% 93%);
 }
 .secondBlackKey{
-    z-index: -1;
-    right: 1270px;
+    right: 870px;
     clip-path: polygon(17% 6.5%, 84.5% 6%, 72.5% 90%, 20% 90%);
 }
 .thirdBlackKey{
-    z-index: -1;
-    right: 1100px;
+    right: 750px;
     clip-path: polygon(25% 5%, 70% 7%, 55% 91%, 21% 89%);
+}
+.fourthBlackKey{
+    right: 750px;
+    clip-path: polygon(8% 7%, 68% 7%, 72% 91%, 25% 91%);
+}
+.fifthBlackKey{
+    right: 750px;
+    clip-path: polygon(9% 10.5%, 76.5% 10%, 65% 94%, 12% 94%);
+}
+.sixthBlackKey{
+    right: 630px;
+    clip-path: polygon(15.5% 5%, 68% 6%, 68.5% 90%, 26% 89%);
+}
+.seventhBlackKey{
+    right: 630px;
+    clip-path: polygon(24% 6.5%, 73% 8%, 71% 99.5%, 11% 98%);
+}
+.eighthBlackKey{
+    right: 520px;
+    clip-path: polygon(7% 6%, 52% 7%, 68% 98%, 14% 97%);
+}
+.ninthBlackKey{
+    right: 520px;
+    clip-path: polygon(20% 2%, 64% 4%, 67% 96%, 11% 94%);
+}
+.tenthBlackKey{
+    right: 530px;
+    clip-path: polygon(11% 11.5%, 72% 7.5%, 75% 99%, 20% 97%);
 }
