@@ -156,7 +156,6 @@ export default {
     playSound(sound) {
       let audio = new Audio(sound);
       audio.play();
-      console.log(audio);
     },
   },
 };
