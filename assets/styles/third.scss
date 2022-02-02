@@ -1,26 +1,25 @@
 .third{
     width: 100%;
-    height: 97vh;
+    height: 95vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
- .white{
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
+.background-img{
+    position: absolute;
+    z-index: -1;
+}
 .firstWhiteKey{
     left: 540px;
     clip-path: polygon(12% 9.5%, 88% 7%, 96% 91%, 31% 91%);
 }
 .secondWhiteKey{
     left: 540px;
-    clip-path: polygon(0% 13.5%, 86% 8.5%, 98% 93%, 29% 93%);
+    clip-path: polygon(0% 13%, 86% 8.5%, 98% 93%, 28.5% 93%);
 }
 .thirdWhiteKey{
     left: 520px;
-    clip-path: polygon(13% 6%, 94% 8%, 88% 92.5%, 33% 93%);
+    clip-path: polygon(13% 6%, 94% 7%, 88% 92.5%, 32% 93%);
 }
 .fourthWhiteKey{
     left: 518px;
@@ -40,19 +39,19 @@
 }
 .eighthWhiteKey{
     left: 490px;
-    clip-path: polygon(10% 7%, 99.5% 7%, 64% 91.5%, 1% 91.5%);
+    clip-path: polygon(9% 7%, 99.5% 7%, 64% 91.5%, 1% 91.5%);
 }
 .ninthWhiteKey{
     left: 475px;
-    clip-path: polygon(24% 7%, 78% 7.2%, 89% 89%, 0% 92%);
+    clip-path: polygon(24% 7%, 79% 7%, 90% 89%, 1% 92%);
 }
 .tenthWhiteKey{
     left: 481px;
-    clip-path: polygon(9% 7%, 63% 7%, 80% 94%, 2.5% 92%);
+    clip-path: polygon(9% 7%, 63% 6.5%, 80% 94%, 2.5% 92%);
 }
 .eleventhWhiteKey{
     left: 456px;
-    clip-path: polygon(1% 6.8%, 72% 6.5%, 100% 86.5%, 12% 91%);
+    clip-path: polygon(1% 6.8%, 72% 6.5%, 98% 86.5%, 12% 91%);
 }
 .twelfthWhiteKey{
     left: 450px;
@@ -65,23 +64,17 @@
 .yellow{
     position: relative;
     top: 11px;
-    width: 115px;
+    min-width: 115px;
     height: 500px;
     background-color: white;
 }
 .yellow:hover{
     background-color: #ffd200;
 }
-
-.black{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .pink{
     position: relative;
     bottom: 90px;
-    width: 100px;
+    min-width: 100px;
     height: 300px;
     background-color: black;
 }
