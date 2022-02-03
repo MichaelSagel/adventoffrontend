@@ -1,6 +1,6 @@
 <template>
-  <div class="test-index">
-    
+  <div class="index">
+    Hello, here I am doing JS and CSS tutorials.
   </div>
 </template>
 

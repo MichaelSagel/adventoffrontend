@@ -1,34 +1,41 @@
 <template>
   <nav class="navigation">
     <div 
-      class="navigation-panel"
+      class="navigationPanel"
     >
       <NuxtLink
         to="/" 
-        class="navigation-panel-element"
+        class="navigationPanelElement"
       >
         Home
       </NuxtLink>
 
       <NuxtLink
         to="/first"
-        class="navigation-panel-element"
+        class="navigationPanelElement"
       >
         First
       </NuxtLink>
       
       <NuxtLink
         to="/second"
-        class="navigation-panel-element"
+        class="navigationPanelElement"
       >
         Second
       </NuxtLink>
 
       <NuxtLink
           to="/third" 
-          class="navigation-panel-element"
+          class="navigationPanelElement"
         >
           Third
+        </NuxtLink>
+
+        <NuxtLink
+          to="/fourth" 
+          class="navigationPanelElement"
+        >
+          Fourth
         </NuxtLink>
     </div>
   </nav>
