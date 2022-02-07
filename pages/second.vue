@@ -48,7 +48,10 @@
       <div class="your-card">Your Card</div>
       <div class="card-content">
         <div class="card-item">
-          <div v-for="item in card" :key="item.id">
+          <div
+            v-for="item in card" 
+            :key="item.id"
+          >
             <template>
               <div class="card-item-tamplate">
                 <img class="card-img" :src="item.img" />

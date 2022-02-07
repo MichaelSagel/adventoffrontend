@@ -3,22 +3,22 @@
     
     <BaseTimer :time-left="timeLeft" />
 
-    <div class="base-timer">
+    <div class="baseTimer">
       <svg
-        class="base-timer__svg"
+        class="baseTimer"
         viewBox="0 0 100 100"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g class="base-timer__circle">
+        <g class="baseTimer">
           <circle
-            class="base-timer__path-elapsed"
+            class="baseTimer__pathElapsed"
             cx="50"
             cy="50"
             r="45"
           ></circle>
           <path
             :stroke-dasharray="circleDasharray"
-            class="base-timer__path-remaining"
+            class="baseTimer__pathRemaining"
             :class="remainingPathColor"
             d="
             M 50, 50
@@ -29,11 +29,11 @@
           ></path>
         </g>
       </svg>
-      <span class="base-timer__label">{{ formattedTimeLeft }}</span>
+      <span class="baseTimer__label">{{ formattedTimeLeft }}</span>
     </div>
 
     <div
-      class="start-or-stop"
+      class="startOrStop"
       @click="start"
     >
       <template v-if="isStarted">S T O P</template>

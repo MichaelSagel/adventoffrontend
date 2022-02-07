@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.start-or-stop{
+.startOrStop{
   position:relative;
   bottom: 200px;
   margin-bottom: 10px;
@@ -20,7 +20,7 @@
   cursor: pointer;
 }
 
-.base-timer {
+.baseTimer {
   position: relative;
   width: 600px;
   height: 600px;
@@ -34,12 +34,12 @@
     stroke: none;
   }
 
-  &__path-elapsed {
+  &__pathElapsed {
     stroke-width: 2px;
     stroke: black;
   }
 
-  &__path-remaining {
+  &__pathRemaining {
     stroke-width: 2px;
     stroke-linecap: round;
     transform: rotate(270deg);
