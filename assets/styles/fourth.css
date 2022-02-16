@@ -26,12 +26,12 @@ H1{
     align-items: center;
     flex-direction: column;
 }
-.regularButtons{
+.regular-buttons{
     font-family: 'Inter', sans-serif;
     padding: 20px;
     min-width: 28px;
-    background-color: #FFFFFF;
-    color: #60C1B6;
+    color: var(--key-color);
+    background-color: var(--key-background-color);
     border-radius: 20px;
     font-weight: 900;
     font-size: 24px;
@@ -40,17 +40,79 @@ H1{
     align-items: center;
     cursor: pointer;
 }
-.grayButtons{
+.gray-buttons{
     color: #868888;
 }
-.regularButtons:hover{
+.regular-buttons:hover{
     background-color: #ffd200;
     color: black;
 }
-.Line{
+.line{
     margin: 5px;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+.test{
+    position: relative;
+    animation-name: test;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+    color: white;
+    background-color: #60C1B6;
+}
+
+@keyframes test{
+    0%{
+        left: 1px;
+        top: 1px;
+        transform: translate(1px, 1px) rotate(0dg);
+    }
+    10%{
+        left: -1px;
+        top: -2px;
+        transform: translate(-1px, -2px) rotate(-1dg);
+    }
+    20%{
+        left: -3px;
+        top: 0px;
+    }
+    30%{
+        left: 3px;
+        top: 2px;
+    }
+    40%{
+        left: 1px;
+        top: -1px;
+    }
+    50%{
+        left: -1px;
+        top: 2px;
+    }
+    60%{
+        left: -3px;
+        top: 1px;
+    }
+    70%{
+        left: 3px;
+        top: 1px;
+    }
+    80%{
+        left: -1px;
+        top: -1px;
+    }
+    90%{
+        left: 1px;
+        top: 2px;
+    }
+    100%{
+        left: 1px;
+        top: -2px;
+    }
 }
