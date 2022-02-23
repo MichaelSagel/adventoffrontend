@@ -54,9 +54,9 @@ H1{
     flex-direction: row;
     justify-content: space-around;
 }
-.test{
+.play{
     position: relative;
-    animation-name: test;
+    animation-name: play;
     animation-duration: 1s;
     animation-timing-function: ease;
     animation-delay: 0s;
@@ -68,7 +68,7 @@ H1{
     background-color: #60C1B6;
 }
 
-@keyframes test{
+@keyframes play{
     0%{
         left: 1px;
         top: 1px;
