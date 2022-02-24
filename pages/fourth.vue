@@ -1,7 +1,9 @@
 <template>
   <div class="fourth">
     <h1>Eyes on the Screen</h1>
-    <div class="content">
+    <div 
+      class="content"
+    >
       <div 
         class="line"
         v-for="item in keyboard"
@@ -41,84 +43,98 @@ export default {
             {
               id: 1,
               value: "`",
+              keyCode: "Equal",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 2,
               value: 1,
+              keyCode: "Digit1",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 3,
               value: 2,
+              keyCode: "Digit2",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 4,
               value: 3,
+              keyCode: "Digit3",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 5,
               value: 4,
+              keyCode: "Digit4",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 6,
               value: 5,
+              keyCode: "Digit5",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 7,
               value: 6,
+              keyCode: "Digit6",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 8,
               value: 7,
+              keyCode: "Digit7",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 9,
               value: 8,
+              keyCode: "Digit8",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 10,
               value: 9,
+              keyCode: "Digit9",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 11,
               value: 0,
+              keyCode: "Digit0",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 12,
               value: "-",
+              keyCode: "Slash",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 13,
               value: "=",
+              keyCode: "Equal",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 14,
               value: "DEL",
+              keyCode: "Backspace",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
@@ -141,66 +157,72 @@ export default {
             },
             {
               id: 17,
-              value: "E",
+              value: "W",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 18,
-              value: "R",
+              value: "E",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 19,
-              value: "T",
+              value: "R",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 20,
-              value: "Y",
+              value: "T",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 21,
-              value: "U",
+              value: "Y",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 22,
-              value: "I",
+              value: "U",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 23,
-              value: "O",
+              value: "I",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 24,
-              value: "P",
+              value: "O",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 25,
-              value: "[",
+              value: "P",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 26,
-              value: "]",
+              value: "[",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 27,
+              value: "]",
+              color: "#60C1B6",
+              background: "#FFFFFF",
+            },
+            {
+              id: 28,
               value: "\\",
               color: "#60C1B6",
               background: "#FFFFFF",
@@ -211,79 +233,79 @@ export default {
           id:2,
           line: [
             {
-              id: 28,
+              id: 29,
               value: "CAPS",
               color: "#868888",
               background: "#FFFFFF",
             },
             {
-              id: 29,
+              id: 30,
               value: "A",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 30,
+              id: 31,
               value: "S",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 31,
+              id: 32,
               value: "D",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 32,
+              id: 33,
               value: "F",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 33,
+              id: 34,
               value: "G",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 34,
+              id: 35,
               value: "H",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 35,
+              id: 36,
               value: "j",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 36,
+              id: 37,
               value: "K",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 37,
+              id: 38,
               value: "L",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 38,
+              id: 39,
               value: ";",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 39,
+              id: 40,
               value: "'",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 40,
+              id: 41,
               value: "ENTER",
               color: "#868888",
               background: "#FFFFFF",
@@ -294,93 +316,101 @@ export default {
           id:3,
           line: [
             {
-              id: 41,
+              id: 42,
               value: "SHIFT",
               color: "#868888",
               background: "#FFFFFF",
             },
             {
-              id: 42,
+              id: 43,
               value: "Z",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 43,
+              id: 44,
               value: "X",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 44,
+              id: 45,
               value: "C",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 45,
+              id: 46,
               value: "V",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 45,
+              id: 47,
               value: "B",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 46,
+              id: 48,
               value: "N",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 47,
+              id: 49,
               value: "M",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 48,
+              id: 50,
               value: ",",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 49,
+              id: 51,
               value: ".",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 50,
+              id: 52,
               value: "/",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
-              id: 51,
+              id: 53,
               value: "SHIFT",
               color: "#868888",
               background: "#FFFFFF",
             },
           ],
         },
-      ],      
+      ],
     };
   },
   methods: {
     randomKey: function () {
       let min = 1;
-      let max = 51;
+      let max = 14; //53
       let randomnumber = Math.floor(Math.random() * (max - min)) + min;
-      console.log(randomnumber);
       this.selectedId = randomnumber;
-      let pressedButton = document.addEventListener('keydown');
-      if (pressedButton === element.value){
 
-      }
+      document.addEventListener("keydown", (keyDownEvent) => {
+        // мы прозодимся по всем кнопкам в наших массивах 
+        this.keyboard.forEach((item) => {
+          // item это не кнопка!
+          console.log(item)
+          // мы смотрим что ID перед которыми мы итэрируемся сейчас это текушая выбраная кнопка
+          // и проверяем что код нажатой кнопки совподает с кодом кнопки текущей итэрации
+          if (item.id === selectedId && item.keyCode === keyDownEvent.code) {
+            this.randomKey();
+          }
+        });
+      })
     },
   },
 };
