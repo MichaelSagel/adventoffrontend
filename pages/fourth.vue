@@ -439,35 +439,14 @@ export default {
       this.selectedId = randomnumber;
 
       document.addEventListener("keydown", (keyDownEvent) => {
-        this.keyboard[0].line.forEach((item) => {
+        this.keyboard.forEach((item) => {
           console.log(item)
-          if (item.id === this.selectedId && item.keyCode === keyDownEvent.code) {
-            this.randomKey();
-          }
-        });
-      });
-      document.addEventListener("keydown", (keyDownEvent) => {
-        this.keyboard[1].line.forEach((item) => {
-          console.log(item)
-          if (item.id === this.selectedId && item.keyCode === keyDownEvent.code) {
-            this.randomKey();
-          }
-        });
-      });
-      document.addEventListener("keydown", (keyDownEvent) => {
-        this.keyboard[2].line.forEach((item) => {
-          console.log(item)
-          if (item.id === this.selectedId && item.keyCode === keyDownEvent.code) {
-            this.randomKey();
-          }
-        });
-      });
-      document.addEventListener("keydown", (keyDownEvent) => {
-        this.keyboard[3].line.forEach((item) => {
-          console.log(item)
-          if (item.id === this.selectedId && item.keyCode === keyDownEvent.code) {
-            this.randomKey();
-          }
+          item.line.forEach((items) => {
+          console.log(items)
+            if (items.id === this.selectedId && items.keyCode === keyDownEvent.code) {
+              this.randomKey();
+            }
+          });
         });
       });
     },
