@@ -146,84 +146,98 @@ export default {
             {
               id: 15,
               value: "Tab",
+              keyCode: "Tab",
               color: "#868888",
               background: "#FFFFFF",
             },
             {
               id: 16,
               value: "Q",
+              keyCode: "KeyQ",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 17,
               value: "W",
+              keyCode: "KeyW",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 18,
               value: "E",
+              keyCode: "KeyE",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 19,
               value: "R",
+              keyCode: "KeyR",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 20,
               value: "T",
+              keyCode: "KeyT",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 21,
               value: "Y",
+              keyCode: "KeyY",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 22,
               value: "U",
+              keyCode: "KeyU",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 23,
               value: "I",
+              keyCode: "KeyI",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 24,
               value: "O",
+              keyCode: "KeyO",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 25,
               value: "P",
+              keyCode: "KeyP",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 26,
               value: "[",
+              keyCode: "Digit8",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 27,
               value: "]",
+              keyCode: "Digit9",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 28,
               value: "\\",
+              keyCode: "Minus",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
@@ -235,78 +249,91 @@ export default {
             {
               id: 29,
               value: "CAPS",
+              keyCode: "CapsLock",
               color: "#868888",
               background: "#FFFFFF",
             },
             {
               id: 30,
               value: "A",
+              keyCode: "KeyA",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 31,
               value: "S",
+              keyCode: "KeyS",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 32,
               value: "D",
+              keyCode: "KeyD",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 33,
               value: "F",
+              keyCode: "KeyF",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 34,
               value: "G",
+              keyCode: "KeyG",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 35,
               value: "H",
+              keyCode: "KeyH",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 36,
               value: "j",
+              keyCode: "KeyJ",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 37,
               value: "K",
+              keyCode: "KeyK",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 38,
               value: "L",
+              keyCode: "KeyL",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 39,
               value: ";",
+              keyCode: "Comma",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 40,
               value: "'",
+              keyCode: "Equal",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 41,
               value: "ENTER",
+              keyCode: "Enter",
               color: "#868888",
               background: "#FFFFFF",
             },
@@ -318,72 +345,84 @@ export default {
             {
               id: 42,
               value: "SHIFT",
+              keyCode: "ShiftLeft",
               color: "#868888",
               background: "#FFFFFF",
             },
             {
               id: 43,
               value: "Z",
+              keyCode: "KeyZ",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 44,
               value: "X",
+              keyCode: "KeyX",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 45,
               value: "C",
+              keyCode: "KeyC",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 46,
               value: "V",
+              keyCode: "KeyV",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 47,
               value: "B",
+              keyCode: "KeyB",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 48,
               value: "N",
+              keyCode: "KeyN",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 49,
               value: "M",
+              keyCode: "KeyM",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 50,
               value: ",",
+              keyCode: "Comma",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 51,
               value: ".",
+              keyCode: "Period",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 52,
               value: "/",
+              keyCode: "Digit7",
               color: "#60C1B6",
               background: "#FFFFFF",
             },
             {
               id: 53,
               value: "SHIFT",
+              keyCode: "ShiftRight",
               color: "#868888",
               background: "#FFFFFF",
             },
@@ -395,22 +434,42 @@ export default {
   methods: {
     randomKey: function () {
       let min = 1;
-      let max = 14; //53
+      let max = 53; //53
       let randomnumber = Math.floor(Math.random() * (max - min)) + min;
       this.selectedId = randomnumber;
 
       document.addEventListener("keydown", (keyDownEvent) => {
-        // мы прозодимся по всем кнопкам в наших массивах 
-        this.keyboard.forEach((item) => {
-          // item это не кнопка!
+        this.keyboard[0].line.forEach((item) => {
           console.log(item)
-          // мы смотрим что ID перед которыми мы итэрируемся сейчас это текушая выбраная кнопка
-          // и проверяем что код нажатой кнопки совподает с кодом кнопки текущей итэрации
-          if (item.id === selectedId && item.keyCode === keyDownEvent.code) {
+          if (item.id === this.selectedId && item.keyCode === keyDownEvent.code) {
             this.randomKey();
           }
         });
-      })
+      });
+      document.addEventListener("keydown", (keyDownEvent) => {
+        this.keyboard[1].line.forEach((item) => {
+          console.log(item)
+          if (item.id === this.selectedId && item.keyCode === keyDownEvent.code) {
+            this.randomKey();
+          }
+        });
+      });
+      document.addEventListener("keydown", (keyDownEvent) => {
+        this.keyboard[2].line.forEach((item) => {
+          console.log(item)
+          if (item.id === this.selectedId && item.keyCode === keyDownEvent.code) {
+            this.randomKey();
+          }
+        });
+      });
+      document.addEventListener("keydown", (keyDownEvent) => {
+        this.keyboard[3].line.forEach((item) => {
+          console.log(item)
+          if (item.id === this.selectedId && item.keyCode === keyDownEvent.code) {
+            this.randomKey();
+          }
+        });
+      });
     },
   },
 };
