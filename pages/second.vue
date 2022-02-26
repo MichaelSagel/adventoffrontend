@@ -28,7 +28,7 @@
             <div class="price">${{ item.price }}</div>
             <div
               class="btn-bay"
-              @click="toggleProduct(item)"
+              @click="toggle_Product(item)"
             >
               <template v-if="item.isAdd">Add to Cart</template>
               <template v-else>
@@ -65,11 +65,11 @@
                   <div class="card-info-price">${{ item.price }}</div>
 
                   <div class="amount-of-orders">
-                    <div @click="removeProduct(item.id)" class="minus-img">
+                    <div @click="remove_Product(item.id)" class="minus-img">
                       <img src="./../assets/images/second/chevron.svg" />
                     </div>
                     {{ item.count }}
-                    <div @click="raiseProduct(item.id)" class="plus-img">
+                    <div @click="raise_Product(item.id)" class="plus-img">
                       <img src="./../assets/images/second/chevron.svg" />
                     </div>
                     <div class="amount-of-orders-price">${{ cardsum }}</div>
@@ -204,7 +204,7 @@ export default {
   },
 
   methods: {
-    toggleProduct: function (product) {
+    toggle_Product: function (product) {
       const index = this.card.findIndex(function (element) {
         return element.id === product.id;
       });
@@ -217,13 +217,13 @@ export default {
       }
     },
 
-    raiseProduct: function (productId) {
+    raise_Product: function (productId) {
       const product = this.card.find(function (element) {
         return element.id === productId;
       });
       product.count += 1;
     },
-    removeProduct: function (productId) {
+    remove_Product: function (productId) {
       const product = this.card.find(function (element) {
         return element.id === productId;
       });

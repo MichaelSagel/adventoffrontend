@@ -1,20 +1,14 @@
 <template>
   <div class="fourth">
     <h1>Eyes on the Screen</h1>
-    <div 
-      class="content"
-    >
-      <div 
-        class="line"
-        v-for="item in keyboard"
-        :key="item.id"
-      >
+    <div class="content">
+      <div class="line" v-for="item in keyboard" :key="item.id">
         <div
           class="regular-buttons"
           v-for="element in item.line"
           :key="element.id"
           :class="{
-            play:selectedId === element.id
+            play: selectedId === element.id,
           }"
           :style="{
             '--key-color': element.color,
@@ -35,10 +29,10 @@ export default {
   },
   data: function () {
     return {
-      selectedId:0,
+      selectedId: 0,
       keyboard: [
         {
-          id:0,
+          id: 0,
           line: [
             {
               id: 1,
@@ -141,7 +135,7 @@ export default {
           ],
         },
         {
-          id:1,
+          id: 1,
           line: [
             {
               id: 15,
@@ -244,7 +238,7 @@ export default {
           ],
         },
         {
-          id:2,
+          id: 2,
           line: [
             {
               id: 29,
@@ -340,7 +334,7 @@ export default {
           ],
         },
         {
-          id:3,
+          id: 3,
           line: [
             {
               id: 42,
@@ -440,10 +434,13 @@ export default {
 
       document.addEventListener("keydown", (keyDownEvent) => {
         this.keyboard.forEach((item) => {
-          console.log(item)
+          console.log(item);
           item.line.forEach((items) => {
-          console.log(items)
-            if (items.id === this.selectedId && items.keyCode === keyDownEvent.code) {
+            console.log(items);
+            if (
+              items.id === this.selectedId &&
+              items.keyCode === keyDownEvent.code
+            ) {
               this.randomKey();
             }
           });
