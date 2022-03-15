@@ -432,20 +432,21 @@ export default {
       let randomnumber = Math.floor(Math.random() * (max - min)) + min;
       this.selectedId = randomnumber;
 
-      document.addEventListener("keydown", (keyDownEvent) => {
+      const hz = (keyDownEvent) => {
+        console.log("item");
         this.keyboard.forEach((item) => {
-          console.log(item);
           item.line.forEach((items) => {
-            console.log(items);
             if (
               items.id === this.selectedId &&
               items.keyCode === keyDownEvent.code
             ) {
               this.randomKey();
+              document.removeEventListener("keydown", hz);
             }
           });
         });
-      });
+      };
+      document.addEventListener("keydown", hz);
     },
   },
 };
