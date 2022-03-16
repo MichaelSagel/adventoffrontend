@@ -26,6 +26,10 @@ export default {
   colorMode: "fourth",
   beforeMount() {
     this.randomKey();
+    document.addEventListener("keydown", this.hz);
+  },
+  destroyed() {
+    document.removeEventListener("keydown", this.hz);
   },
   data: function () {
     return {
@@ -426,27 +430,25 @@ export default {
     };
   },
   methods: {
+    hz: function (keyDownEvent)  {
+      console.log("item");
+      this.keyboard.forEach((item) => {
+        item.line.forEach((items) => {
+          if (
+            items.id === this.selectedId &&
+            items.keyCode === keyDownEvent.code
+          ) {
+            this.randomKey();
+          }
+        });
+      });
+    },
     randomKey: function () {
       let min = 1;
       let max = 53; //53
       let randomnumber = Math.floor(Math.random() * (max - min)) + min;
       this.selectedId = randomnumber;
-
-      const hz = (keyDownEvent) => {
-        console.log("item");
-        this.keyboard.forEach((item) => {
-          item.line.forEach((items) => {
-            if (
-              items.id === this.selectedId &&
-              items.keyCode === keyDownEvent.code
-            ) {
-              this.randomKey();
-              document.removeEventListener("keydown", hz);
-            }
-          });
-        });
-      };
-      document.addEventListener("keydown", hz);
+      
     },
   },
 };
