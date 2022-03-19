@@ -26,10 +26,10 @@ export default {
   colorMode: "fourth",
   beforeMount() {
     this.randomKey();
-    document.addEventListener("keydown", this.hz);
+    document.addEventListener("keydown", this.buttonCheck);
   },
   destroyed() {
-    document.removeEventListener("keydown", this.hz);
+    document.removeEventListener("keydown", this.buttonCheck);
   },
   data: function () {
     return {
@@ -430,8 +430,7 @@ export default {
     };
   },
   methods: {
-    hz: function (keyDownEvent)  {
-      console.log("item");
+    buttonCheck: function (keyDownEvent)  {
       this.keyboard.forEach((item) => {
         item.line.forEach((items) => {
           if (

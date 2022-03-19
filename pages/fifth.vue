@@ -20,7 +20,6 @@
         </template>
         <template v-else>
           <button class="content-clicked__btn" @click="item.clicked = false">
-            <!-- , reclicked_function(item.id, item.clicked) -->
             <img
               class="content__checkbox"
               src="../assets/images/fifth/checkbox--checked.svg"
@@ -36,8 +35,21 @@
 <script>
 export default {
   colorMode: "fifth",
+   beforeMount() {
+    document.addEventListener("keydown", this.shift_pressed);
+    document.addEventListener("keyup", this.shift_released);
+    document.addEventListener("mouseup", this.mouse_click);
+  },
+  destroyed() {
+    document.removeEventListener("keydown", this.shift_pressed);
+    document.removeEventListener("keyup", this.shift_released);
+    document.removeEventListener("mouseup", this.mouse_click);
+  },
   data: function () {
     return {
+      shift_condition: false,
+      shift_code_left: "ShiftLeft",
+      shift_code_right: "ShiftRight",
       list: [
         {
           id: 1,
@@ -233,8 +245,28 @@ export default {
         const podcast = this.list.find(function (element) {
           return element.id === list_id;
         });
-        podcast.clicked = true;
-        podcast.id - 1;
+        podcast.clicked = !podcast.clicked;
+      }
+    },
+    shift_pressed: function(shift_pressed){
+      if (shift_pressed.code === this.shift_code_left || shift_pressed.code === this.shift_code_right){
+      console.log("down");
+      this.shift_condition = !this.shift_condition;
+      console.log(this.shift_condition);
+      }
+    },
+    shift_released: function(shift_released){
+      if (shift_released.code === this.shift_code_left || shift_released.code === this.shift_code_right){
+      console.log("up");
+      this.shift_condition = !this.shift_condition;
+      console.log(this.shift_condition);
+      }
+    },
+    mouse_click: function () {
+      if(this.shift_condition === true){
+        for (; this.item.id > 0; this.item.id--){
+          this.item.clicked = true;
+        }
       }
     },
   },
