@@ -7,9 +7,7 @@
         <template v-if="!item.clicked">
           <button
             class="content__btn"
-            @click="
-              (item.clicked = true), clicked_function(item.id, item.clicked)
-            "
+            @click="clicked_function(item.id, item.clicked)"
           >
             <img
               class="content__checkbox"
@@ -19,7 +17,7 @@
           </button>
         </template>
         <template v-else>
-          <button class="content-clicked__btn" @click="item.clicked = false">
+          <button class="content-clicked__btn" @click="clicked_function(item.id, item.clicked)">
             <img
               class="content__checkbox"
               src="../assets/images/fifth/checkbox--checked.svg"
@@ -35,15 +33,13 @@
 <script>
 export default {
   colorMode: "fifth",
-   beforeMount() {
+  beforeMount() {
     document.addEventListener("keydown", this.shift_pressed);
     document.addEventListener("keyup", this.shift_released);
-    document.addEventListener("mouseup", this.mouse_click);
   },
   destroyed() {
     document.removeEventListener("keydown", this.shift_pressed);
     document.removeEventListener("keyup", this.shift_released);
-    document.removeEventListener("mouseup", this.mouse_click);
   },
   data: function () {
     return {
@@ -240,33 +236,44 @@ export default {
     };
   },
   methods: {
-    clicked_function: function (list_id, list_clicked) {
-      if (list_clicked === false) {
-        const podcast = this.list.find(function (element) {
-          return element.id === list_id;
-        });
-        podcast.clicked = !podcast.clicked;
-      }
-    },
-    shift_pressed: function(shift_pressed){
-      if (shift_pressed.code === this.shift_code_left || shift_pressed.code === this.shift_code_right){
-      console.log("down");
-      this.shift_condition = !this.shift_condition;
-      console.log(this.shift_condition);
-      }
-    },
-    shift_released: function(shift_released){
-      if (shift_released.code === this.shift_code_left || shift_released.code === this.shift_code_right){
-      console.log("up");
-      this.shift_condition = !this.shift_condition;
-      console.log(this.shift_condition);
-      }
-    },
-    mouse_click: function () {
-      if(this.shift_condition === true){
-        for (; this.item.id > 0; this.item.id--){
-          this.item.clicked = true;
+    clicked_function: function (item_id, item_clicked) {
+      const index = this.list.findIndex(function (element) {
+        return element.id === item_id;
+      });
+      if (this.shift_condition === true) {
+        for (let number = index; number >= 0; number--) {
+          // перебераем все объекты массива
+          console.log(this.list[number].clicked);
+          console.log(this.list[number].id);
+          console.log(item_clicked);
+          if (this.list[number].clicked === item_clicked) {
+            // если в текущем объекте переменная clicked = clicked нажатого объекта то меняем её 
+            this.list[number].clicked = !this.list[number].clicked;
+          } else {
+            // если в текущем объекте переменная clicked = true то прекращаем for
+            break;
+          }
         }
+      } else {
+        this.list[index].clicked = !this.list[index].clicked;
+      }
+    },
+    shift_pressed: function (shift_pressed) {
+      if (
+        shift_pressed.code === this.shift_code_left ||
+        shift_pressed.code === this.shift_code_right
+      ) {
+        console.log("down");
+        this.shift_condition = !this.shift_condition;
+      }
+    },
+    shift_released: function (shift_released) {
+      if (
+        shift_released.code === this.shift_code_left ||
+        shift_released.code === this.shift_code_right
+      ) {
+        console.log("up");
+        this.shift_condition = !this.shift_condition;
       }
     },
   },
